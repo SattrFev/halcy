@@ -10,11 +10,11 @@ Public Class Dashboard
             DwmSetWindowAttribute(Me.Handle, 38, 1, Marshal.SizeOf(1))
         End If
     End Sub
-    Private Sub closeBtn_Click(sender As Object, e As EventArgs)
-        Login.Dispose
+    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
+        Login.Dispose()
     End Sub
 
-    Private Sub minBtn_Click(sender As Object, e As EventArgs)
+    Private Sub minBtn_Click(sender As Object, e As EventArgs) Handles minBtn.Click
         WindowState = FormWindowState.Minimized
     End Sub
 
