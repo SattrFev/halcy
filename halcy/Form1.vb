@@ -9,7 +9,7 @@ Public Class Login
     Private Shared Function DwmSetWindowAttribute(ByVal hwnd As IntPtr, ByVal dwAttribute As Integer, ByRef pvAttribute As Integer, ByVal cbAttribute As Integer) As Integer
     End Function
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Clipboard.SetText(sha256("admin"))
+
         Me.Size = New Size(295, 276)
         Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
         Dim screenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
@@ -25,7 +25,6 @@ Public Class Login
 
     Private Sub Login_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         txtUsn.Focus()
-
         Dim isrem As String = readini(iniPath, "saved-auth", "remember", "")
         If isrem = 1 Then
             txtUsn.Text = readini(iniPath, "saved-auth", "usn", "")
@@ -90,15 +89,19 @@ Public Class Login
                             writeini(iniPath, "saved-auth", "usn", txtUsn.Text)
                             writeini(iniPath, "saved-auth", "psw", Encr("Write", txtPsw.Text))
                             Me.Hide()
-                            Dashboard.Visible = True
                             userInfo(0) = reader("id").ToString()
                             userInfo(1) = reader("usn").ToString()
-                            userInfo(2) = reader("role").ToString()
+                            If reader("role").ToString() = "admin" Then
+                                userInfo(2) = "Administrator"
+                            Else
+                                userInfo(2) = "User"
+                            End If
                         Else
                             MessageBox.Show("Username atau Password" & vbCrLf & "Salah!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     End Using
                     If isloged = True Then
+                        Dashboard.Visible = True
                         Using cmdqx As New MySqlCommand("UPDATE users SET status = @onl, last_login = @lg WHERE usn = @usn AND psw = @psw", conn)
                             cmdqx.Parameters.AddWithValue("@onl", "on")
                             cmdqx.Parameters.AddWithValue("@lg", Now)
