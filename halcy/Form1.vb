@@ -1,13 +1,15 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.ComponentModel
 Imports System.Runtime.InteropServices
 
 
+
 Public Class Login
-    Public isloged As Boolean = False
     <DllImport("dwmapi.dll")>
     Private Shared Function DwmSetWindowAttribute(ByVal hwnd As IntPtr, ByVal dwAttribute As Integer, ByRef pvAttribute As Integer, ByVal cbAttribute As Integer) As Integer
     End Function
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Clipboard.SetText(sha256("admin"))
         Me.Size = New Size(295, 276)
         Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
         Dim screenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
@@ -23,7 +25,8 @@ Public Class Login
 
     Private Sub Login_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         txtUsn.Focus()
-        Dim isrem As Integer = readini(iniPath, "saved-auth", "remember", "")
+
+        Dim isrem As String = readini(iniPath, "saved-auth", "remember", "")
         If isrem = 1 Then
             txtUsn.Text = readini(iniPath, "saved-auth", "usn", "")
             txtPsw.Text = Encr("Read", readini(iniPath, "saved-auth", "psw", ""))
@@ -39,14 +42,14 @@ Public Class Login
         portTxt.Text = portDb
         serverTxt.Text = serverDb
         dbUsnTxt.Text = usnDb
-        databaseTxt.Text = databaseDb
+
 
         If dbpsw.Length >= 16 Then
             dbPswTxt.Text = Encr("read", dbpsw)
         Else
             dbpsw = "yOHYxrJApm5I75qsqne3qw=="
         End If
-        If connectDb($"server={serverDb};port={portDb};user={usnDb};password={Encr("read", dbpsw)};database={databaseDb}", False) = True Then
+        If connectDb($"database={databaseDb};server={serverDb};port={portDb};user={usnDb};password={Encr("read", dbpsw)}", False) = True Then
             confDbBtn.FillColor = Color.FromArgb(157, 192, 139)
             connectBtn.FillColor = Color.FromArgb(157, 192, 139)
             dbStatPnl.FillColor = Color.FromArgb(157, 192, 139)
@@ -65,7 +68,7 @@ Public Class Login
             dbUsnTxt.Enabled = False
             dbPswTxt.Enabled = False
             dbMode.Enabled = False
-            databaseTxt.Enabled = False
+
         Else
             confDbBtn.FillColor = Color.FromArgb(210, 102, 90)
             connectBtn.FillColor = Color.FromArgb(210, 102, 90)
@@ -76,20 +79,33 @@ Public Class Login
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         If txtUsn.TextLength > 0 AndAlso txtPsw.TextLength > 0 Then
-            Dim cmdq = "SELECT COUNT(*) FROM user WHERE usn = @usn AND psw = @psw"
+            Dim cmdq = "SELECT * FROM users WHERE usn = @usn AND psw = @psw"
             Using cmd As New MySqlCommand(cmdq, conn)
                 cmd.Parameters.AddWithValue("@usn", txtUsn.Text)
-                cmd.Parameters.AddWithValue("@psw", txtPsw.Text)
+                cmd.Parameters.AddWithValue("@psw", sha256(txtPsw.Text))
                 Try
-                    Dim res = Convert.ToInt32(cmd.ExecuteScalar)
-                    If res > 0 Then
-                        isloged = True
-                        writeini(iniPath, "saved-auth", "usn", txtUsn.Text)
-                        writeini(iniPath, "saved-auth", "psw", Encr("Write", txtPsw.Text))
-                        Me.Hide()
-                        Dashboard.Visible = True
-                    Else
-                        MessageBox.Show("Username atau Password" & vbCrLf & "Salah!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Using reader As MySqlDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            isloged = True
+                            writeini(iniPath, "saved-auth", "usn", txtUsn.Text)
+                            writeini(iniPath, "saved-auth", "psw", Encr("Write", txtPsw.Text))
+                            Me.Hide()
+                            Dashboard.Visible = True
+                            userInfo(0) = reader("id").ToString()
+                            userInfo(1) = reader("usn").ToString()
+                            userInfo(2) = reader("role").ToString()
+                        Else
+                            MessageBox.Show("Username atau Password" & vbCrLf & "Salah!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    End Using
+                    If isloged = True Then
+                        Using cmdqx As New MySqlCommand("UPDATE users SET status = @onl, last_login = @lg WHERE usn = @usn AND psw = @psw", conn)
+                            cmdqx.Parameters.AddWithValue("@onl", "on")
+                            cmdqx.Parameters.AddWithValue("@lg", Now)
+                            cmdqx.Parameters.AddWithValue("@usn", txtUsn.Text)
+                            cmdqx.Parameters.AddWithValue("@psw", sha256(txtPsw.Text))
+                            cmdqx.ExecuteNonQuery()
+                        End Using
                     End If
                 Catch ex As Exception
                     MessageBox.Show("Terjadi kesalahan: " & ex.Message)
@@ -110,7 +126,7 @@ Public Class Login
 
     Private Sub confDbBtn_Click(sender As Object, e As EventArgs) Handles confDbBtn.Click
         loginPnl.Visible = False
-        Size = New Size(295, 384)
+        Size = New Size(295, 344)
         dbPnl.Location = loginPnl.Location
         dbPnl.Visible = True
     End Sub
@@ -142,15 +158,16 @@ Public Class Login
             dbUsnTxt.Enabled = True
             dbPswTxt.Enabled = True
             dbMode.Enabled = True
-            databaseTxt.Enabled = True
+
         Else
-            If serverTxt.TextLength > 0 AndAlso portTxt.TextLength > 0 AndAlso dbUsnTxt.TextLength > 0 AndAlso dbPswTxt.TextLength > 0 AndAlso dbMode.SelectedIndex = 0 AndAlso databaseTxt.TextLength > 0 Then
-                If connectDb($"server={serverTxt.Text};port={portTxt.Text};user={dbUsnTxt.Text};password={dbPswTxt.Text};database={databaseTxt.Text}", True) = True Then
+            If serverTxt.TextLength > 0 AndAlso portTxt.TextLength > 0 AndAlso dbUsnTxt.TextLength > 0 AndAlso dbPswTxt.TextLength > 0 AndAlso dbMode.SelectedIndex = 0 Then
+                If connectDb($"server={serverTxt.Text};port={portTxt.Text};user={dbUsnTxt.Text};password={dbPswTxt.Text}", True) = True Then
                     confDbBtn.FillColor = Color.FromArgb(157, 192, 139)
                     connectBtn.FillColor = Color.FromArgb(157, 192, 139)
                     dbStatPnl.FillColor = Color.FromArgb(157, 192, 139)
                     dbStatPnl.FillColor2 = Color.FromArgb(170, 191, 159)
                     connectBtn.Text = "Disconnect"
+                    isDbExist()
 
                     'Enabling Login-Fields
                     txtUsn.Enabled = True
@@ -164,13 +181,13 @@ Public Class Login
                     dbUsnTxt.Enabled = False
                     dbPswTxt.Enabled = False
                     dbMode.Enabled = False
-                    databaseTxt.Enabled = False
+
 
                     writeini(iniPath, "saved-db", "usn", dbUsnTxt.Text)
                     writeini(iniPath, "saved-db", "psw", Encr("write", dbPswTxt.Text))
                     writeini(iniPath, "saved-db", "port", portTxt.Text)
                     writeini(iniPath, "saved-db", "server", serverTxt.Text)
-                    writeini(iniPath, "saved-db", "dbdb", databaseTxt.Text)
+
                 End If
             Else
                 MessageBox.Show("Tidak boleh ada" & vbCrLf & "field yang kosong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -178,6 +195,7 @@ Public Class Login
 
         End If
     End Sub
+
 
     Private Sub keepChk_CheckedChanged(sender As Object, e As EventArgs) Handles keepChk.CheckedChanged
         If keepChk.Checked = True Then

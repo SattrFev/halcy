@@ -50,8 +50,6 @@ Partial Class Login
         Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Label1 = New Label()
         txtUsn = New Guna.UI2.WinForms.Guna2TextBox()
         txtPsw = New Guna.UI2.WinForms.Guna2TextBox()
@@ -70,7 +68,6 @@ Partial Class Login
         Label2 = New Label()
         backBtn = New Guna.UI2.WinForms.Guna2Button()
         connectBtn = New Guna.UI2.WinForms.Guna2Button()
-        databaseTxt = New Guna.UI2.WinForms.Guna2TextBox()
         dbPswTxt = New Guna.UI2.WinForms.Guna2TextBox()
         dbUsnTxt = New Guna.UI2.WinForms.Guna2TextBox()
         portTxt = New Guna.UI2.WinForms.Guna2TextBox()
@@ -219,6 +216,7 @@ Partial Class Login
         ' 
         Guna2BorderlessForm1.ContainerControl = Me
         Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
+        Guna2BorderlessForm1.ResizeForm = False
         Guna2BorderlessForm1.TransparentWhileDrag = True
         ' 
         ' keepChk
@@ -295,14 +293,13 @@ Partial Class Login
         dbPnl.Controls.Add(Label2)
         dbPnl.Controls.Add(backBtn)
         dbPnl.Controls.Add(connectBtn)
-        dbPnl.Controls.Add(databaseTxt)
         dbPnl.Controls.Add(dbPswTxt)
         dbPnl.Controls.Add(dbUsnTxt)
         dbPnl.Controls.Add(portTxt)
         dbPnl.Controls.Add(serverTxt)
         dbPnl.Location = New Point(320, 24)
         dbPnl.Name = "dbPnl"
-        dbPnl.Size = New Size(304, 360)
+        dbPnl.Size = New Size(304, 320)
         dbPnl.TabIndex = 11
         dbPnl.Visible = False
         ' 
@@ -346,7 +343,7 @@ Partial Class Login
         backBtn.FillColor = Color.Gray
         backBtn.Font = New Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         backBtn.ForeColor = Color.White
-        backBtn.Location = New Point(32, 304)
+        backBtn.Location = New Point(32, 256)
         backBtn.Margin = New Padding(4, 6, 4, 6)
         backBtn.Name = "backBtn"
         backBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges17
@@ -365,7 +362,7 @@ Partial Class Login
         connectBtn.FillColor = Color.Gray
         connectBtn.Font = New Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         connectBtn.ForeColor = Color.White
-        connectBtn.Location = New Point(120, 304)
+        connectBtn.Location = New Point(120, 256)
         connectBtn.Margin = New Padding(4, 6, 4, 6)
         connectBtn.Name = "connectBtn"
         connectBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges19
@@ -373,31 +370,9 @@ Partial Class Login
         connectBtn.TabIndex = 2
         connectBtn.Text = "Connect"
         ' 
-        ' databaseTxt
-        ' 
-        databaseTxt.CustomizableEdges = CustomizableEdges20
-        databaseTxt.DefaultText = ""
-        databaseTxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        databaseTxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        databaseTxt.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        databaseTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        databaseTxt.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        databaseTxt.Font = New Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        databaseTxt.ForeColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        databaseTxt.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        databaseTxt.Location = New Point(32, 248)
-        databaseTxt.Margin = New Padding(4, 5, 4, 5)
-        databaseTxt.Name = "databaseTxt"
-        databaseTxt.PasswordChar = ChrW(0)
-        databaseTxt.PlaceholderText = "Database"
-        databaseTxt.SelectedText = ""
-        databaseTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges21
-        databaseTxt.Size = New Size(232, 38)
-        databaseTxt.TabIndex = 1
-        ' 
         ' dbPswTxt
         ' 
-        dbPswTxt.CustomizableEdges = CustomizableEdges22
+        dbPswTxt.CustomizableEdges = CustomizableEdges20
         dbPswTxt.DefaultText = ""
         dbPswTxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         dbPswTxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -413,13 +388,13 @@ Partial Class Login
         dbPswTxt.PasswordChar = "*"c
         dbPswTxt.PlaceholderText = "Db Password"
         dbPswTxt.SelectedText = ""
-        dbPswTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges23
+        dbPswTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges21
         dbPswTxt.Size = New Size(232, 38)
         dbPswTxt.TabIndex = 1
         ' 
         ' dbUsnTxt
         ' 
-        dbUsnTxt.CustomizableEdges = CustomizableEdges24
+        dbUsnTxt.CustomizableEdges = CustomizableEdges22
         dbUsnTxt.DefaultText = ""
         dbUsnTxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         dbUsnTxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -435,13 +410,13 @@ Partial Class Login
         dbUsnTxt.PasswordChar = ChrW(0)
         dbUsnTxt.PlaceholderText = "Db Username"
         dbUsnTxt.SelectedText = ""
-        dbUsnTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges25
+        dbUsnTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges23
         dbUsnTxt.Size = New Size(232, 38)
         dbUsnTxt.TabIndex = 1
         ' 
         ' portTxt
         ' 
-        portTxt.CustomizableEdges = CustomizableEdges26
+        portTxt.CustomizableEdges = CustomizableEdges24
         portTxt.DefaultText = ""
         portTxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         portTxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -458,13 +433,13 @@ Partial Class Login
         portTxt.PasswordChar = ChrW(0)
         portTxt.PlaceholderText = "Port"
         portTxt.SelectedText = ""
-        portTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges27
+        portTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges25
         portTxt.Size = New Size(72, 38)
         portTxt.TabIndex = 1
         ' 
         ' serverTxt
         ' 
-        serverTxt.CustomizableEdges = CustomizableEdges28
+        serverTxt.CustomizableEdges = CustomizableEdges26
         serverTxt.DefaultText = ""
         serverTxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         serverTxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -480,7 +455,7 @@ Partial Class Login
         serverTxt.PasswordChar = ChrW(0)
         serverTxt.PlaceholderText = "Server"
         serverTxt.SelectedText = ""
-        serverTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges29
+        serverTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges27
         serverTxt.Size = New Size(152, 38)
         serverTxt.TabIndex = 1
         ' 
@@ -489,7 +464,7 @@ Partial Class Login
         AutoScaleDimensions = New SizeF(10F, 28F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
-        ClientSize = New Size(623, 384)
+        ClientSize = New Size(623, 344)
         Controls.Add(Panel1)
         Controls.Add(loginPnl)
         Controls.Add(dbPnl)
@@ -527,7 +502,6 @@ Partial Class Login
     Friend WithEvents Label2 As Label
     Friend WithEvents dbPswTxt As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents backBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents databaseTxt As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents dbStatPnl As Guna.UI2.WinForms.Guna2GradientPanel
 
 End Class

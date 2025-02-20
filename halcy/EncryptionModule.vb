@@ -1,6 +1,7 @@
 ﻿Imports System
 Imports System.Security.Cryptography
 Imports System.Text
+Imports Org.BouncyCastle.Security
 
 Module EncryptionModule
     Private ReadOnly Key As String = "<+yTA;uB^f8Z5^/n"
@@ -37,5 +38,11 @@ Module EncryptionModule
         Dim plainBytes As Byte() = decryptor.TransformFinalBlock(encryptedBytes, 0, encryptedBytes.Length)
 
         Return Encoding.UTF8.GetString(plainBytes)
+    End Function
+    Function sha256(input As String) As String
+        Dim sha256Hasher As New SHA256Managed() ' Ganti .Create() dengan New
+        Dim bytes As Byte() = Encoding.UTF8.GetBytes(input)
+        Dim hash As Byte() = sha256Hasher.ComputeHash(bytes)
+        Return BitConverter.ToString(hash).Replace("-", "").ToLower()
     End Function
 End Module

@@ -25,9 +25,9 @@ Partial Class Dashboard
         components = New ComponentModel.Container()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -35,10 +35,10 @@ Partial Class Dashboard
         Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(components)
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        roleBtn = New Label()
         usnLbl = New Label()
         Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
-        permLbl = New Label()
+        logoutBtn = New Guna.UI2.WinForms.Guna2Button()
         Panel1 = New Panel()
         closeBtn = New Guna.UI2.WinForms.Guna2CircleButton()
         minBtn = New Guna.UI2.WinForms.Guna2CircleButton()
@@ -59,10 +59,10 @@ Partial Class Dashboard
         ' Guna2Panel1
         ' 
         Guna2Panel1.BorderColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Guna2Panel1.Controls.Add(Guna2Button1)
+        Guna2Panel1.Controls.Add(roleBtn)
+        Guna2Panel1.Controls.Add(logoutBtn)
         Guna2Panel1.Controls.Add(usnLbl)
         Guna2Panel1.Controls.Add(Guna2CirclePictureBox1)
-        Guna2Panel1.Controls.Add(permLbl)
         Guna2Panel1.CustomBorderColor = Color.Gray
         Guna2Panel1.CustomBorderThickness = New Padding(0, 0, 1, 1)
         CustomizableEdges4.BottomLeft = False
@@ -74,69 +74,75 @@ Partial Class Dashboard
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
         Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges5
-        Guna2Panel1.Size = New Size(200, 104)
+        Guna2Panel1.Size = New Size(208, 80)
         Guna2Panel1.TabIndex = 1
         ' 
-        ' Guna2Button1
+        ' roleBtn
         ' 
-        Guna2Button1.BorderRadius = 5
-        Guna2Button1.CustomizableEdges = CustomizableEdges1
-        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button1.FillColor = Color.FromArgb(CByte(252), CByte(92), CByte(88))
-        Guna2Button1.Font = New Font("Poppins Medium", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Guna2Button1.ForeColor = Color.White
-        Guna2Button1.Location = New Point(72, 64)
-        Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Button1.Size = New Size(96, 24)
-        Guna2Button1.TabIndex = 14
-        Guna2Button1.Text = "Logout"
+        roleBtn.AutoSize = True
+        roleBtn.BackColor = Color.Transparent
+        roleBtn.FlatStyle = FlatStyle.Flat
+        roleBtn.Font = New Font("Poppins", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        roleBtn.Location = New Point(80, 40)
+        roleBtn.Name = "roleBtn"
+        roleBtn.Size = New Size(83, 19)
+        roleBtn.TabIndex = 3
+        roleBtn.Text = "Administrator"
         ' 
         ' usnLbl
         ' 
         usnLbl.AutoSize = True
         usnLbl.BackColor = Color.Transparent
         usnLbl.FlatStyle = FlatStyle.Flat
-        usnLbl.Font = New Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        usnLbl.Location = New Point(72, 16)
+        usnLbl.Font = New Font("Poppins Medium", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        usnLbl.Location = New Point(80, 16)
         usnLbl.Name = "usnLbl"
-        usnLbl.Size = New Size(98, 26)
+        usnLbl.Size = New Size(86, 23)
         usnLbl.TabIndex = 3
         usnLbl.Text = "Username"
         ' 
         ' Guna2CirclePictureBox1
         ' 
         Guna2CirclePictureBox1.FillColor = Color.Silver
+        Guna2CirclePictureBox1.Image = My.Resources.Resources.user
         Guna2CirclePictureBox1.ImageRotate = 0F
+        Guna2CirclePictureBox1.InitialImage = My.Resources.Resources.user
         Guna2CirclePictureBox1.Location = New Point(16, 16)
         Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges3
         Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Guna2CirclePictureBox1.Size = New Size(48, 48)
+        Guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         Guna2CirclePictureBox1.TabIndex = 2
         Guna2CirclePictureBox1.TabStop = False
         ' 
-        ' permLbl
+        ' logoutBtn
         ' 
-        permLbl.AutoSize = True
-        permLbl.Font = New Font("Poppins", 8.25F)
-        permLbl.Location = New Point(72, 40)
-        permLbl.Name = "permLbl"
-        permLbl.Size = New Size(83, 19)
-        permLbl.TabIndex = 2
-        permLbl.Text = "Administrator"
+        logoutBtn.BorderColor = Color.Empty
+        logoutBtn.BorderRadius = 5
+        logoutBtn.CustomizableEdges = CustomizableEdges1
+        logoutBtn.DisabledState.BorderColor = Color.DarkGray
+        logoutBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        logoutBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        logoutBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        logoutBtn.FillColor = Color.FromArgb(CByte(225), CByte(79), CByte(94))
+        logoutBtn.Font = New Font("Poppins Medium", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        logoutBtn.ForeColor = Color.White
+        logoutBtn.Image = My.Resources.Resources.logout
+        logoutBtn.Location = New Point(176, 48)
+        logoutBtn.Name = "logoutBtn"
+        logoutBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        logoutBtn.Size = New Size(24, 24)
+        logoutBtn.TabIndex = 14
         ' 
         ' Panel1
         ' 
         Panel1.Controls.Add(closeBtn)
         Panel1.Controls.Add(minBtn)
         Panel1.Controls.Add(maxBtn)
-        Panel1.Location = New Point(1040, -8)
+        Panel1.Location = New Point(1000, -8)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(80, 40)
+        Panel1.Size = New Size(120, 72)
         Panel1.TabIndex = 6
         ' 
         ' closeBtn
@@ -148,7 +154,7 @@ Partial Class Dashboard
         closeBtn.FillColor = Color.FromArgb(CByte(252), CByte(92), CByte(88))
         closeBtn.Font = New Font("Segoe UI", 9F)
         closeBtn.ForeColor = Color.White
-        closeBtn.Location = New Point(16, 16)
+        closeBtn.Location = New Point(56, 16)
         closeBtn.Name = "closeBtn"
         closeBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         closeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
@@ -164,7 +170,7 @@ Partial Class Dashboard
         minBtn.FillColor = Color.FromArgb(CByte(253), CByte(190), CByte(70))
         minBtn.Font = New Font("Segoe UI", 9F)
         minBtn.ForeColor = Color.White
-        minBtn.Location = New Point(32, 16)
+        minBtn.Location = New Point(72, 16)
         minBtn.Name = "minBtn"
         minBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges9
         minBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
@@ -180,7 +186,7 @@ Partial Class Dashboard
         maxBtn.FillColor = Color.FromArgb(CByte(57), CByte(201), CByte(78))
         maxBtn.Font = New Font("Segoe UI", 9F)
         maxBtn.ForeColor = Color.White
-        maxBtn.Location = New Point(48, 16)
+        maxBtn.Location = New Point(88, 16)
         maxBtn.Name = "maxBtn"
         maxBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         maxBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
@@ -196,7 +202,7 @@ Partial Class Dashboard
         Guna2Panel2.Location = New Point(0, 0)
         Guna2Panel2.Name = "Guna2Panel2"
         Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges7
-        Guna2Panel2.Size = New Size(200, 664)
+        Guna2Panel2.Size = New Size(208, 664)
         Guna2Panel2.TabIndex = 7
         ' 
         ' Dashboard
@@ -222,13 +228,13 @@ Partial Class Dashboard
     End Sub
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
     Friend WithEvents usnLbl As Label
-    Friend WithEvents permLbl As Label
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents closeBtn As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents minBtn As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents maxBtn As Guna.UI2.WinForms.Guna2CircleButton
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents logoutBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents roleBtn As Label
 End Class

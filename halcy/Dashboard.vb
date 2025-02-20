@@ -18,5 +18,9 @@ Public Class Dashboard
         WindowState = FormWindowState.Minimized
     End Sub
 
-
+    Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
+        isloged = False
+        Me.Dispose()
+        Login.Visible = True
+    End Sub
 End Class
