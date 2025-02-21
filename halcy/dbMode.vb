@@ -6,6 +6,40 @@ Module dbMode
     Public userInfo(2) As String
     Public isloged As Boolean = False
 
+
+    Function addLog(ByVal idx As Integer, Optional ByVal pholder As String = "") As Boolean
+        Dim actions As String = "unspecified"
+        Select Case idx
+            Case 1
+                actions = $"menambahkan barang {pholder} ke db"
+            Case 2
+                actions = $"menghapus barang {pholder} dari db"
+            Case 3
+                actions = "login"
+            Case 4
+                actions = $"mengedit barang {pholder}"
+            Case 5
+                actions = "logout"
+        End Select
+
+        actions = actions.Trim()
+
+        Using newConn As New MySqlConnection(conn.ConnectionString & ";Password=1232;")
+
+            Try
+                newConn.Open()
+                Dim cmd = New MySqlCommand($"INSERT INTO userlog (executor, actions) VALUES ('{userInfo(2)}', '{actions}')", newConn)
+                cmd.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
+
+
+
     Function isDbExist() As Boolean
         If conn.State = ConnectionState.Open Then
             Dim qrx As String = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = @dbName"

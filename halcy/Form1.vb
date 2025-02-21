@@ -25,6 +25,7 @@ Public Class Login
 
     Private Sub Login_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         txtUsn.Focus()
+        FormAddNewUser.Show()
         Dim isrem As String = readini(iniPath, "saved-auth", "remember", "")
         If isrem = 1 Then
             txtUsn.Text = readini(iniPath, "saved-auth", "usn", "")
@@ -96,6 +97,7 @@ Public Class Login
                             Else
                                 userInfo(2) = "User"
                             End If
+                            addLog(3)
                         Else
                             MessageBox.Show("Username atau Password" & vbCrLf & "Salah!", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If

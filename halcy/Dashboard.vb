@@ -1,4 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
+Imports Microsoft.EntityFrameworkCore.Diagnostics
 Imports Microsoft.EntityFrameworkCore.ValueGeneration.Internal
 Imports MySql.Data.MySqlClient
 
@@ -17,6 +18,7 @@ Public Class Dashboard
     End Sub
 
     Private Sub Dashboard_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Me.Width = 1153
         usnLbl.Text = userInfo(1)
         roleLbl.Text = userInfo(2)
         If userInfo(2) = "Administrator" Then
@@ -41,14 +43,23 @@ Public Class Dashboard
         logBtn.FillColor = Color.Transparent
         itemsBtn.FillColor = Color.Transparent
         userBtn.FillColor = Color.Transparent
+        'dashPnl.visible = false
+        logPnlx.Visible = False
+        itemsPnl.Visible = False
+        userPnl.Visible = False
         If pages = 1 Then
             dashBtn.FillColor = Color.Gainsboro
         ElseIf pages = 2 Then
             userBtn.FillColor = Color.Gainsboro
+            userPnl.Visible = True
         ElseIf pages = 3 Then
             logBtn.FillColor = Color.Gainsboro
+            logPnlx.Visible = True
+            logPnlx.BringToFront()
+            loadLog()
         ElseIf pages = 4 Then
             itemsBtn.FillColor = Color.Gainsboro
+            itemsPnl.Visible = True
         End If
     End Function
 
@@ -181,10 +192,12 @@ Public Class Dashboard
         cmd.Parameters.AddWithValue("@newval", newval)
         Clipboard.SetText(query)
         cmd.ExecuteNonQuery()
+        addLog(4, $"{idx}")
     End Function
     Private Sub editModeBtn_Click(sender As Object, e As EventArgs) Handles editModeBtn.Click
         If editmode = False Then
             editmode = True
+            removeItemBtn.Enabled = True
             editModeBtn.Text = "View Mode"
             barangDgv.ReadOnly = False
             barangDgv.Columns("Id").ReadOnly = True
@@ -195,6 +208,7 @@ Public Class Dashboard
             editModeBtn.FillColor = Color.FromArgb(210, 102, 90)
         Else
             editmode = False
+            removeItemBtn.Enabled = False
             editModeBtn.FillColor = Color.Gray
             barangDgv.ReadOnly = True
             refreshBarangBtn.Enabled = Enabled
@@ -209,13 +223,79 @@ Public Class Dashboard
     Private Sub barangDgv_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles barangDgv.CellValueChanged
         ' Cek biar gak error kalau index -1 (misal pas header berubah)
         If e.RowIndex >= 0 And e.ColumnIndex >= 0 Then
-            Dim rowIndex As Integer = e.RowIndex
-            Dim columnIndex As Integer = e.ColumnIndex
-            Dim columnName As String = barangDgv.Columns(columnIndex).Name
-            Dim newValue As String = barangDgv.Rows(rowIndex).Cells(columnIndex).Value.ToString()
-            Dim id As String = barangDgv.Rows(rowIndex).Cells(9).Value.ToString()
+            Dim rowIndex = e.RowIndex
+            Dim columnIndex = e.ColumnIndex
+            Dim columnName = barangDgv.Columns(columnIndex).Name
+            Dim newValue = barangDgv.Rows(rowIndex).Cells(columnIndex).Value.ToString
+            Dim id = barangDgv.Rows(rowIndex).Cells(9).Value.ToString
             editBarang(columnIndex, newValue, id)
         End If
     End Sub
 
+
+
+    Sub deleteItem()
+        Dim selectedId As New List(Of String)
+        Dim selectedItem As New List(Of String)
+
+        For Each row As DataGridViewRow In barangDgv.SelectedRows
+            selectedId.Add(barangDgv.Rows(row.Index).Cells(9).Value.ToString())
+            selectedItem.Add(barangDgv.Rows(row.Index).Cells(1).Value.ToString())
+        Next
+
+        If selectedId.Count > 0 Then
+            Dim res As DialogResult = MessageBox.Show($"Apakah kamu yakin ingin menghapus {selectedId.Count} barang?", "Are you sure?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+            If res = DialogResult.OK Then
+                Dim query As String = "DELETE FROM barang WHERE id IN (" & String.Join(",", selectedId) & ")"
+                addLog(2, String.Join(",", selectedItem) & ")")
+                Dim cmd As New MySqlCommand(query, conn)
+                cmd.ExecuteNonQuery()
+                loadBarang()
+            End If
+
+            'MessageBox.Show(String.Join(vbCrLf, selectedIndexes), "Selected Row Indexes")
+        Else
+            MessageBox.Show("Tidak ada barang yang dipilih.", "Info")
+        End If
+    End Sub
+
+    Private Sub removeItemBtn_Click(sender As Object, e As EventArgs) Handles removeItemBtn.Click
+        deleteItem()
+    End Sub
+
+    Sub loadLog()
+        Dim qry As String = "SELECT * FROM userlog"
+        Dim cmd = New MySqlCommand(qry, conn)
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
+        Dim no As Integer = 1
+        logDgv.Rows.Clear()
+
+        While reader.Read()
+            logDgv.Rows.Add(no, reader("executor").ToString(), reader("actions").ToString(), reader("time").ToString(), reader("id").ToString())
+            no += 1
+        End While
+        reader.Close()
+    End Sub
+    Private Sub logRefreshBtn_Click(sender As Object, e As EventArgs) Handles logRefreshBtn.Click
+        loadLog()
+    End Sub
+
+    Private Sub Guna2DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles userDgv.CellContentClick
+
+    End Sub
+
+    Sub loadUser()
+        Dim cmd = New MySqlCommand("SELECT * FROM users", conn)
+        Dim reader As MySqlDataReader = cmd.ExecuteReader
+        Dim no As Integer = 1
+        While reader.Read
+            userDgv.Rows.Add(no, reader("usn").ToString(), reader("role").ToString(), reader("created_at").ToString())
+            no += 1
+        End While
+        reader.Close()
+    End Sub
+
+    Private Sub Guna2Button2_Click_1(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        loadUser()
+    End Sub
 End Class
