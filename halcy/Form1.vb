@@ -25,7 +25,6 @@ Public Class Login
 
     Private Sub Login_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         txtUsn.Focus()
-        FormAddNewUser.Show()
         Dim isrem As String = readini(iniPath, "saved-auth", "remember", "")
         If isrem = 1 Then
             txtUsn.Text = readini(iniPath, "saved-auth", "usn", "")

@@ -20,6 +20,8 @@ Module dbMode
                 actions = $"mengedit barang {pholder}"
             Case 5
                 actions = "logout"
+            Case 6
+                actions = $"add new user {pholder}"
         End Select
 
         actions = actions.Trim()

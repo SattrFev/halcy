@@ -9,6 +9,7 @@ Public Class Dashboard
     End Function
     Dim barangList As New List(Of (Integer, String, String, Decimal, Decimal, String, Integer, Integer, String, String))()
     Dim editmode As Boolean = False
+    Dim editmodeuser As Boolean = False
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Environment.OSVersion.Version.Major >= 10 Then
             DwmSetWindowAttribute(Me.Handle, 33, 2, Marshal.SizeOf(2))
@@ -167,7 +168,23 @@ Public Class Dashboard
             FormAddNewItem.ShowDialog()
         End If
     End Sub
-
+    Private Sub userDgv_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles userDgv.CellValueChanged
+        If e.RowIndex >= 0 And e.ColumnIndex >= 0 Then
+            editUser(e.ColumnIndex, userDgv.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString(), userDgv.SelectedRows(0).Cells(4).Value.ToString())
+        End If
+    End Sub
+    Private Function editUser(ByVal col As Integer, newval As String, idx As String) As Object
+        Dim func As String
+        If col = 1 Then
+            func = "usn"
+        ElseIf col = 2 Then
+            func = "role"
+        End If
+        Dim query As String = $"UPDATE users SET {func} = @newval WHERE id = {idx}"
+        Dim cmd As New MySqlCommand(query, conn)
+        cmd.Parameters.AddWithValue("@newval", newval)
+        cmd.ExecuteNonQuery()
+    End Function
     Private Function editBarang(ByVal col As Integer, newval As String, idx As String) As Object
         Dim func As String
         If col = 1 Then
@@ -234,6 +251,27 @@ Public Class Dashboard
 
 
 
+    Private Sub userDeleteBtn_Click(sender As Object, e As EventArgs) Handles userDeleteBtn.Click
+        deleteUser()
+    End Sub
+
+    Sub deleteUser()
+        Dim selectedId As String
+        If userDgv.RowCount > 0 Then
+            selectedId = userDgv.SelectedRows(0).Cells(4).Value.ToString()
+            If selectedId.Length > 0 Then
+                Dim res As DialogResult = MessageBox.Show($"Yakin mau ngapus user?", "Yg Bener?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                If res = DialogResult.OK Then
+                    Dim qry As String = $"DELETE FROM users WHERE id = {selectedId}"
+                    Dim cmd As New MySqlCommand(qry, conn)
+                    cmd.ExecuteNonQuery()
+                    loadUser()
+                End If
+            End If
+        End If
+    End Sub
+
+
     Sub deleteItem()
         Dim selectedId As New List(Of String)
         Dim selectedItem As New List(Of String)
@@ -280,22 +318,73 @@ Public Class Dashboard
         loadLog()
     End Sub
 
-    Private Sub Guna2DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles userDgv.CellContentClick
 
-    End Sub
 
     Sub loadUser()
+        userDgv.Rows.Clear()
         Dim cmd = New MySqlCommand("SELECT * FROM users", conn)
         Dim reader As MySqlDataReader = cmd.ExecuteReader
         Dim no As Integer = 1
         While reader.Read
-            userDgv.Rows.Add(no, reader("usn").ToString(), reader("role").ToString(), reader("created_at").ToString())
+            userDgv.Rows.Add(no, reader("usn").ToString(), reader("role").ToString(), reader("created_at").ToString(), reader("id").ToString())
             no += 1
         End While
         reader.Close()
     End Sub
 
-    Private Sub Guna2Button2_Click_1(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click_1(sender As Object, e As EventArgs) Handles userRefreshBtn.Click
         loadUser()
+    End Sub
+
+
+    Sub changePass(ByVal idx As Integer)
+        If userDgv.RowCount > 0 Then
+            Dim cmdx As New MySqlCommand("SELECT * FROM users WHERE id = @id", conn)
+            cmdx.Parameters.AddWithValue("@id", idx)
+            Dim reader As MySqlDataReader = cmdx.ExecuteReader
+            reader.Read()
+            If reader.HasRows Then
+                Dim userInput As String
+                userInput = InputBox($"Enter a new password for {reader("usn")}", "Change Password")
+                If userInput <> "" Then
+                    reader.Close()
+                    Dim qry As String = $"UPDATE users SET psw = @newval WHERE id = {idx}"
+                    Dim cmd As New MySqlCommand(qry, conn)
+                    cmd.Parameters.AddWithValue("@newval", sha256(userInput))
+                    cmd.ExecuteNonQuery()
+                    loadUser()
+                End If
+            Else
+                loadUser()
+            End If
+        End If
+    End Sub
+    Private Sub addUserBtn_Click(sender As Object, e As EventArgs) Handles addUserBtn.Click
+        FormAddNewUser.ShowDialog()
+    End Sub
+
+    Private Sub userEditBtn_Click(sender As Object, e As EventArgs) Handles userEditBtn.Click
+        If editmodeuser = False Then
+            editmodeuser = True
+            userRefreshBtn.Enabled = False
+            changePwBtn.Enabled = True
+            userDgv.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Alizarin
+            userDgv.ReadOnly = False
+            userDgv.Columns("userId").ReadOnly = True
+            userDeleteBtn.Enabled = True
+            userDgv.Columns("userNo").ReadOnly = True
+            userDgv.Columns("userCreated").ReadOnly = True
+        Else
+            editmodeuser = False
+            changePwBtn.Enabled = False
+            userDgv.ReadOnly = True
+            userRefreshBtn.Enabled = True
+            userDeleteBtn.Enabled = False
+            userDgv.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue
+        End If
+    End Sub
+
+    Private Sub changePwBtn_Click(sender As Object, e As EventArgs) Handles changePwBtn.Click
+        changePass(userDgv.Rows(userDgv.SelectedRows(0).Index).Cells(4).Value.ToString())
     End Sub
 End Class

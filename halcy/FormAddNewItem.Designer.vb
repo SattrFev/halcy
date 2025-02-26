@@ -40,12 +40,12 @@ Partial Class FormAddNewItem
         Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(components)
         Panel1 = New Panel()
         closeBtn = New Guna.UI2.WinForms.Guna2CircleButton()
@@ -60,9 +60,9 @@ Partial Class FormAddNewItem
         Panel2 = New Panel()
         unitCmb = New Guna.UI2.WinForms.Guna2ComboBox()
         sellPriceTxt = New Guna.UI2.WinForms.Guna2TextBox()
-        buyPricetxt = New Guna.UI2.WinForms.Guna2TextBox()
-        StockTxt = New Guna.UI2.WinForms.Guna2TextBox()
         minStockTxt = New Guna.UI2.WinForms.Guna2TextBox()
+        StockTxt = New Guna.UI2.WinForms.Guna2TextBox()
+        buyPricetxt = New Guna.UI2.WinForms.Guna2TextBox()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         SuspendLayout()
@@ -139,7 +139,7 @@ Partial Class FormAddNewItem
         Label1.Name = "Label1"
         Label1.Size = New Size(115, 26)
         Label1.TabIndex = 8
-        Label1.Text = "Add New User"
+        Label1.Text = "Add New Item"
         ' 
         ' nameTxt
         ' 
@@ -304,29 +304,29 @@ Partial Class FormAddNewItem
         sellPriceTxt.Size = New Size(112, 36)
         sellPriceTxt.TabIndex = 2
         ' 
-        ' buyPricetxt
+        ' minStockTxt
         ' 
-        buyPricetxt.BorderRadius = 10
-        buyPricetxt.CustomizableEdges = CustomizableEdges20
-        buyPricetxt.DefaultText = ""
-        buyPricetxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        buyPricetxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        buyPricetxt.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        buyPricetxt.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        buyPricetxt.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        buyPricetxt.Font = New Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        buyPricetxt.ForeColor = Color.Black
-        buyPricetxt.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        buyPricetxt.Location = New Point(24, 200)
-        buyPricetxt.Margin = New Padding(3, 5, 3, 5)
-        buyPricetxt.Name = "buyPricetxt"
-        buyPricetxt.PasswordChar = ChrW(0)
-        buyPricetxt.PlaceholderForeColor = Color.Gray
-        buyPricetxt.PlaceholderText = "Buy Price"
-        buyPricetxt.SelectedText = ""
-        buyPricetxt.ShadowDecoration.CustomizableEdges = CustomizableEdges21
-        buyPricetxt.Size = New Size(112, 36)
-        buyPricetxt.TabIndex = 2
+        minStockTxt.BorderRadius = 10
+        minStockTxt.CustomizableEdges = CustomizableEdges16
+        minStockTxt.DefaultText = ""
+        minStockTxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
+        minStockTxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
+        minStockTxt.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        minStockTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        minStockTxt.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        minStockTxt.Font = New Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        minStockTxt.ForeColor = Color.Black
+        minStockTxt.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        minStockTxt.Location = New Point(144, 240)
+        minStockTxt.Margin = New Padding(3, 5, 3, 5)
+        minStockTxt.Name = "minStockTxt"
+        minStockTxt.PasswordChar = ChrW(0)
+        minStockTxt.PlaceholderForeColor = Color.Gray
+        minStockTxt.PlaceholderText = "Min Stock"
+        minStockTxt.SelectedText = ""
+        minStockTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges17
+        minStockTxt.Size = New Size(112, 36)
+        minStockTxt.TabIndex = 2
         ' 
         ' StockTxt
         ' 
@@ -352,29 +352,29 @@ Partial Class FormAddNewItem
         StockTxt.Size = New Size(112, 36)
         StockTxt.TabIndex = 2
         ' 
-        ' minStockTxt
+        ' buyPricetxt
         ' 
-        minStockTxt.BorderRadius = 10
-        minStockTxt.CustomizableEdges = CustomizableEdges16
-        minStockTxt.DefaultText = ""
-        minStockTxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        minStockTxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        minStockTxt.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        minStockTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        minStockTxt.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        minStockTxt.Font = New Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        minStockTxt.ForeColor = Color.Black
-        minStockTxt.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        minStockTxt.Location = New Point(144, 240)
-        minStockTxt.Margin = New Padding(3, 5, 3, 5)
-        minStockTxt.Name = "minStockTxt"
-        minStockTxt.PasswordChar = ChrW(0)
-        minStockTxt.PlaceholderForeColor = Color.Gray
-        minStockTxt.PlaceholderText = "Min Stock"
-        minStockTxt.SelectedText = ""
-        minStockTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges17
-        minStockTxt.Size = New Size(112, 36)
-        minStockTxt.TabIndex = 2
+        buyPricetxt.BorderRadius = 10
+        buyPricetxt.CustomizableEdges = CustomizableEdges20
+        buyPricetxt.DefaultText = ""
+        buyPricetxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
+        buyPricetxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
+        buyPricetxt.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        buyPricetxt.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        buyPricetxt.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        buyPricetxt.Font = New Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        buyPricetxt.ForeColor = Color.Black
+        buyPricetxt.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        buyPricetxt.Location = New Point(24, 200)
+        buyPricetxt.Margin = New Padding(3, 5, 3, 5)
+        buyPricetxt.Name = "buyPricetxt"
+        buyPricetxt.PasswordChar = ChrW(0)
+        buyPricetxt.PlaceholderForeColor = Color.Gray
+        buyPricetxt.PlaceholderText = "Buy Price"
+        buyPricetxt.SelectedText = ""
+        buyPricetxt.ShadowDecoration.CustomizableEdges = CustomizableEdges21
+        buyPricetxt.Size = New Size(112, 36)
+        buyPricetxt.TabIndex = 2
         ' 
         ' FormAddNewItem
         ' 
