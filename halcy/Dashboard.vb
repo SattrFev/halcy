@@ -2,6 +2,9 @@
 Imports Microsoft.EntityFrameworkCore.Diagnostics
 Imports Microsoft.EntityFrameworkCore.ValueGeneration.Internal
 Imports MySql.Data.MySqlClient
+Imports Org.BouncyCastle.Crypto.Generators
+Imports System.Media
+
 
 Public Class Dashboard
     <DllImport("dwmapi.dll")>
@@ -44,12 +47,16 @@ Public Class Dashboard
         logBtn.FillColor = Color.Transparent
         itemsBtn.FillColor = Color.Transparent
         userBtn.FillColor = Color.Transparent
-        'dashPnl.visible = false
+        dashPnl.Visible = False
         logPnlx.Visible = False
         itemsPnl.Visible = False
         userPnl.Visible = False
         If pages = 1 Then
             dashBtn.FillColor = Color.Gainsboro
+            If DashDgv.Rows.Count = 0 Then
+                lblTotal.Text = "Rp 0"
+            End If
+            dashPnl.Visible = True
         ElseIf pages = 2 Then
             userBtn.FillColor = Color.Gainsboro
             userPnl.Visible = True
@@ -170,7 +177,7 @@ Public Class Dashboard
     End Sub
     Private Sub userDgv_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles userDgv.CellValueChanged
         If e.RowIndex >= 0 And e.ColumnIndex >= 0 Then
-            editUser(e.ColumnIndex, userDgv.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString(), userDgv.SelectedRows(0).Cells(4).Value.ToString())
+            editUser(e.ColumnIndex, userDgv.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString, userDgv.SelectedRows(0).Cells(4).Value.ToString)
         End If
     End Sub
     Private Function editUser(ByVal col As Integer, newval As String, idx As String) As Object
@@ -386,5 +393,127 @@ Public Class Dashboard
 
     Private Sub changePwBtn_Click(sender As Object, e As EventArgs) Handles changePwBtn.Click
         changePass(userDgv.Rows(userDgv.SelectedRows(0).Index).Cells(4).Value.ToString())
+    End Sub
+
+    Private Sub Logout_Click(sender As Object, e As EventArgs) Handles Logout.Click
+        isloged = False
+        userInfo = New String(2) {}
+        Me.Dispose()
+        Login.Show()
+    End Sub
+
+    Private Sub txtBarcode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBarcode.KeyPress
+        If e.KeyChar = Chr(13) Then
+            Dim query As String = "SELECT * FROM barang WHERE barcode = @barc"
+            Dim cmd = New MySqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@barc", txtBarcode.Text)
+            Dim reader As MySqlDataReader = cmd.ExecuteReader()
+            Dim no As Integer
+            If Not reader.HasRows Then
+                SystemSounds.Hand.Play()
+            Else
+                While reader.Read()
+                    no = DashDgv.Rows.Count + 1
+                    DashDgv.Rows.Add(no, reader("name").ToString(), Convert.ToDecimal(reader("sell_price")), 1)
+                    sumdgv()
+                    txtBarcode.Clear()
+                    btnPay.Enabled = True
+                    btnDel.Enabled = True
+                    btnSetQty.Enabled = True
+                End While
+            End If
+            reader.Close()
+            e.Handled = True
+        End If
+    End Sub
+
+    Function removeItemFromDashDgv(ByVal rowx As Integer)
+        DashDgv.Rows.RemoveAt(rowx)
+        reorderNum()
+        sumdgv()
+    End Function
+    Function reorderNum()
+        For i As Integer = 0 To DashDgv.Rows.Count - 1 ' Fix: Ubah Count jadi Count - 1
+            If Not DashDgv.Rows(i).IsNewRow Then ' Hindari baris kosong di akhir
+                DashDgv.Rows(i).Cells("dashColNo").Value = i + 1
+            End If
+        Next
+    End Function
+
+    Function sumdgv() As Decimal
+        Dim totalHarga As Decimal = 0
+        For i As Integer = 0 To DashDgv.Rows.Count - 1
+            If Not DashDgv.Rows(i).IsNewRow Then ' Hindari baris kosong di akhir
+                Dim hargaitem As Decimal = Convert.ToDecimal(DashDgv.Rows(i).Cells("dashColPrice").Value) * Convert.ToInt16(DashDgv.Rows(i).Cells("dashColQty").Value)
+                totalHarga += hargaitem
+            End If
+        Next
+        lblTotal.Text = $"Rp {totalHarga.ToString("N0")}"
+        Return totalHarga
+    End Function
+
+    Private Sub btnDel_Click(sender As Object, e As EventArgs) Handles btnDel.Click
+        Dim selectedIndex = DashDgv.SelectedRows(0).Index
+        removeItemFromDashDgv(selectedIndex)
+        If DashDgv.Rows.Count = 0 Then
+            btnDel.Enabled = False
+            btnPay.Enabled = False
+            btnSetQty.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnSetQty_Click(sender As Object, e As EventArgs) Handles btnSetQty.Click, btnQrisMethod.Click
+        Dim userInput As String
+        Dim qty As Integer
+        Dim si = DashDgv.SelectedRows(0).Index
+        Do
+            userInput = InputBox($"Masukkan Kuantitas dari {DashDgv.Rows(si).Cells(1).Value.ToString}", "Change Qty")
+            If userInput = "" Then Exit Sub
+        Loop Until Integer.TryParse(userInput, qty)
+        DashDgv.Rows(si).Cells(3).Value = qty
+        sumdgv()
+
+    End Sub
+    Function cashPaymentChance(ByVal total As Decimal) As Integer
+        Dim userInput As String
+        Dim chance As Integer
+        Do
+            userInput = InputBox($"Masukkan jumlah yang dibayarkan customer!", $"Rp {total.ToString("N0")}")
+            If userInput = "" Then Exit Function
+        Loop Until Integer.TryParse(userInput, chance) AndAlso (userInput - total) >= 0
+        chance = userInput - total
+        Dim result As MsgBoxResult
+
+        result = MsgBox("Saldo: " & Convert.ToInt64(userInput).ToString("N0") & vbCrLf &
+                "Hutang: " & total.ToString("N0") & vbCrLf &
+                "Kembalian: " & chance.ToString("N0") & vbCrLf & "Apakah Ingin Mencetak Struk?",
+                vbYesNoCancel + vbInformation, "Detail Pembayaran")
+
+        If result = vbYes Then
+            MessageBox.Show("User memilih YES")
+        ElseIf result = vbNo Then
+            MessageBox.Show("User memilih NO")
+        ElseIf result = vbCancel Then
+            MessageBox.Show("User membatalkan transaksi")
+            Return -1 ' Bisa return -1 untuk indikasi batal
+        End If
+
+        Return chance
+    End Function
+
+
+    Private Sub btnPay_Click(sender As Object, e As EventArgs) Handles btnPay.Click
+        paymentPnl.Location = New Point(616, 24)
+        paymentPnl.BringToFront()
+        paymentPnl.Visible = True
+    End Sub
+
+    Private Sub btnCancelPay_Click(sender As Object, e As EventArgs) Handles btnCancelPay.Click
+        paymentPnl.Location = New Point(616, 208)
+        paymentPnl.Visible = False
+    End Sub
+
+    Private Sub btnCash_Click(sender As Object, e As EventArgs) Handles btnCash.Click
+        cashPaymentChance(sumdgv())
     End Sub
 End Class

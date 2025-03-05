@@ -23,37 +23,12 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges38 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges39 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges40 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim CustomizableEdges41 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges42 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim DataGridViewCellStyle7 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim CustomizableEdges36 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges37 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges44 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges45 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges43 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges56 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges57 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges58 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges31 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -61,19 +36,65 @@ Partial Class Dashboard
         Dim CustomizableEdges33 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges34 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges35 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges36 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges37 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges38 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim DataGridViewCellStyle7 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim CustomizableEdges59 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges60 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim DataGridViewCellStyle10 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim CustomizableEdges54 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges55 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges39 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges40 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges41 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges42 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges46 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges47 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges48 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges49 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges50 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges51 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges52 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges53 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(components)
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         roleLbl = New Label()
@@ -109,7 +130,7 @@ Partial Class Dashboard
         logTime = New DataGridViewTextBoxColumn()
         logId = New DataGridViewTextBoxColumn()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        btnCashMethod = New Guna.UI2.WinForms.Guna2Button()
         Logout = New Guna.UI2.WinForms.Guna2Button()
         itemsBtn = New Guna.UI2.WinForms.Guna2Button()
         logBtn = New Guna.UI2.WinForms.Guna2Button()
@@ -127,6 +148,23 @@ Partial Class Dashboard
         userRole = New DataGridViewTextBoxColumn()
         userCreated = New DataGridViewTextBoxColumn()
         userId = New DataGridViewTextBoxColumn()
+        dashPnl = New Panel()
+        DashDgv = New Guna.UI2.WinForms.Guna2DataGridView()
+        dashColNo = New DataGridViewTextBoxColumn()
+        dashColName = New DataGridViewTextBoxColumn()
+        dashColPrice = New DataGridViewTextBoxColumn()
+        dashColQty = New DataGridViewTextBoxColumn()
+        paymentPnl = New Guna.UI2.WinForms.Guna2Panel()
+        btnCancelPay = New Guna.UI2.WinForms.Guna2Button()
+        btnQrisMethod = New Guna.UI2.WinForms.Guna2Button()
+        btnCash = New Guna.UI2.WinForms.Guna2Button()
+        dashSidePnl = New Guna.UI2.WinForms.Guna2Panel()
+        btnPay = New Guna.UI2.WinForms.Guna2Button()
+        btnSetQty = New Guna.UI2.WinForms.Guna2Button()
+        btnDel = New Guna.UI2.WinForms.Guna2Button()
+        lblTotal = New Label()
+        Label1 = New Label()
+        txtBarcode = New Guna.UI2.WinForms.Guna2TextBox()
         Guna2Panel1.SuspendLayout()
         CType(pfpPct, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
@@ -137,6 +175,10 @@ Partial Class Dashboard
         Guna2Panel2.SuspendLayout()
         userPnl.SuspendLayout()
         CType(userDgv, ComponentModel.ISupportInitialize).BeginInit()
+        dashPnl.SuspendLayout()
+        CType(DashDgv, ComponentModel.ISupportInitialize).BeginInit()
+        paymentPnl.SuspendLayout()
+        dashSidePnl.SuspendLayout()
         SuspendLayout()
         ' 
         ' Guna2BorderlessForm1
@@ -153,15 +195,15 @@ Partial Class Dashboard
         Guna2Panel1.Controls.Add(pfpPct)
         Guna2Panel1.CustomBorderColor = Color.Gray
         Guna2Panel1.CustomBorderThickness = New Padding(0, 0, 1, 1)
-        CustomizableEdges26.BottomLeft = False
-        CustomizableEdges26.BottomRight = False
-        CustomizableEdges26.TopLeft = False
-        CustomizableEdges26.TopRight = False
-        Guna2Panel1.CustomizableEdges = CustomizableEdges26
+        CustomizableEdges44.BottomLeft = False
+        CustomizableEdges44.BottomRight = False
+        CustomizableEdges44.TopLeft = False
+        CustomizableEdges44.TopRight = False
+        Guna2Panel1.CustomizableEdges = CustomizableEdges44
         Guna2Panel1.Dock = DockStyle.Top
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges27
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges45
         Guna2Panel1.Size = New Size(176, 64)
         Guna2Panel1.TabIndex = 1
         ' 
@@ -170,7 +212,7 @@ Partial Class Dashboard
         roleLbl.AutoSize = True
         roleLbl.BackColor = Color.Transparent
         roleLbl.FlatStyle = FlatStyle.Flat
-        roleLbl.Font = New Font("Poppins", 7.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        roleLbl.Font = New Font("Poppins", 7F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         roleLbl.Location = New Point(56, 32)
         roleLbl.Name = "roleLbl"
         roleLbl.Size = New Size(76, 17)
@@ -182,7 +224,7 @@ Partial Class Dashboard
         usnLbl.AutoSize = True
         usnLbl.BackColor = Color.Transparent
         usnLbl.FlatStyle = FlatStyle.Flat
-        usnLbl.Font = New Font("Poppins Medium", 8.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        usnLbl.Font = New Font("Poppins Medium", 8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         usnLbl.Location = New Point(56, 16)
         usnLbl.Name = "usnLbl"
         usnLbl.Size = New Size(74, 19)
@@ -197,7 +239,7 @@ Partial Class Dashboard
         pfpPct.InitialImage = My.Resources.Resources.user
         pfpPct.Location = New Point(16, 16)
         pfpPct.Name = "pfpPct"
-        pfpPct.ShadowDecoration.CustomizableEdges = CustomizableEdges25
+        pfpPct.ShadowDecoration.CustomizableEdges = CustomizableEdges43
         pfpPct.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         pfpPct.Size = New Size(32, 32)
         pfpPct.SizeMode = PictureBoxSizeMode.StretchImage
@@ -221,11 +263,11 @@ Partial Class Dashboard
         closeBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         closeBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         closeBtn.FillColor = Color.FromArgb(CByte(252), CByte(92), CByte(88))
-        closeBtn.Font = New Font("Segoe UI", 9.0F)
+        closeBtn.Font = New Font("Segoe UI", 9F)
         closeBtn.ForeColor = Color.White
         closeBtn.Location = New Point(56, 16)
         closeBtn.Name = "closeBtn"
-        closeBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges38
+        closeBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges56
         closeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         closeBtn.Size = New Size(12, 12)
         closeBtn.TabIndex = 6
@@ -237,11 +279,11 @@ Partial Class Dashboard
         minBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         minBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         minBtn.FillColor = Color.FromArgb(CByte(253), CByte(190), CByte(70))
-        minBtn.Font = New Font("Segoe UI", 9.0F)
+        minBtn.Font = New Font("Segoe UI", 9F)
         minBtn.ForeColor = Color.White
         minBtn.Location = New Point(72, 16)
         minBtn.Name = "minBtn"
-        minBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges39
+        minBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges57
         minBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         minBtn.Size = New Size(12, 12)
         minBtn.TabIndex = 6
@@ -253,11 +295,11 @@ Partial Class Dashboard
         maxBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         maxBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         maxBtn.FillColor = Color.FromArgb(CByte(57), CByte(201), CByte(78))
-        maxBtn.Font = New Font("Segoe UI", 9.0F)
+        maxBtn.Font = New Font("Segoe UI", 9F)
         maxBtn.ForeColor = Color.White
         maxBtn.Location = New Point(88, 16)
         maxBtn.Name = "maxBtn"
-        maxBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges40
+        maxBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges58
         maxBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         maxBtn.Size = New Size(12, 12)
         maxBtn.TabIndex = 6
@@ -278,18 +320,18 @@ Partial Class Dashboard
         ' removeItemBtn
         ' 
         removeItemBtn.BorderRadius = 15
-        removeItemBtn.CustomizableEdges = CustomizableEdges11
+        removeItemBtn.CustomizableEdges = CustomizableEdges29
         removeItemBtn.DisabledState.BorderColor = Color.DarkGray
         removeItemBtn.DisabledState.CustomBorderColor = Color.DarkGray
         removeItemBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         removeItemBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         removeItemBtn.Enabled = False
         removeItemBtn.FillColor = Color.Gray
-        removeItemBtn.Font = New Font("Poppins", 9.0F)
+        removeItemBtn.Font = New Font("Poppins", 9F)
         removeItemBtn.ForeColor = Color.White
         removeItemBtn.Location = New Point(656, 0)
         removeItemBtn.Name = "removeItemBtn"
-        removeItemBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        removeItemBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges30
         removeItemBtn.Size = New Size(104, 32)
         removeItemBtn.TabIndex = 3
         removeItemBtn.Text = "Delete (F2)"
@@ -297,17 +339,17 @@ Partial Class Dashboard
         ' editModeBtn
         ' 
         editModeBtn.BorderRadius = 15
-        editModeBtn.CustomizableEdges = CustomizableEdges13
+        editModeBtn.CustomizableEdges = CustomizableEdges31
         editModeBtn.DisabledState.BorderColor = Color.DarkGray
         editModeBtn.DisabledState.CustomBorderColor = Color.DarkGray
         editModeBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         editModeBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         editModeBtn.FillColor = Color.Gray
-        editModeBtn.Font = New Font("Poppins", 9.0F)
+        editModeBtn.Font = New Font("Poppins", 9F)
         editModeBtn.ForeColor = Color.White
         editModeBtn.Location = New Point(536, 0)
         editModeBtn.Name = "editModeBtn"
-        editModeBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        editModeBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges32
         editModeBtn.Size = New Size(112, 32)
         editModeBtn.TabIndex = 3
         editModeBtn.Text = "Edit Mode"
@@ -315,17 +357,17 @@ Partial Class Dashboard
         ' addItemBtn
         ' 
         addItemBtn.BorderRadius = 15
-        addItemBtn.CustomizableEdges = CustomizableEdges15
+        addItemBtn.CustomizableEdges = CustomizableEdges33
         addItemBtn.DisabledState.BorderColor = Color.DarkGray
         addItemBtn.DisabledState.CustomBorderColor = Color.DarkGray
         addItemBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         addItemBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         addItemBtn.FillColor = Color.Gray
-        addItemBtn.Font = New Font("Poppins", 9.0F)
+        addItemBtn.Font = New Font("Poppins", 9F)
         addItemBtn.ForeColor = Color.White
         addItemBtn.Location = New Point(416, 0)
         addItemBtn.Name = "addItemBtn"
-        addItemBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        addItemBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges34
         addItemBtn.Size = New Size(112, 32)
         addItemBtn.TabIndex = 3
         addItemBtn.Text = "Add Item (F1)"
@@ -333,25 +375,25 @@ Partial Class Dashboard
         ' refreshBarangBtn
         ' 
         refreshBarangBtn.BackColor = Color.Transparent
-        refreshBarangBtn.CustomizableEdges = CustomizableEdges17
+        refreshBarangBtn.CustomizableEdges = CustomizableEdges35
         refreshBarangBtn.DisabledState.BorderColor = Color.DarkGray
         refreshBarangBtn.DisabledState.CustomBorderColor = Color.DarkGray
         refreshBarangBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         refreshBarangBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         refreshBarangBtn.FillColor = Color.Transparent
-        refreshBarangBtn.Font = New Font("Segoe UI", 9.0F)
+        refreshBarangBtn.Font = New Font("Segoe UI", 9F)
         refreshBarangBtn.ForeColor = Color.WhiteSmoke
         refreshBarangBtn.Image = My.Resources.Resources.reload
         refreshBarangBtn.Location = New Point(936, 8)
         refreshBarangBtn.Name = "refreshBarangBtn"
-        refreshBarangBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        refreshBarangBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges36
         refreshBarangBtn.Size = New Size(24, 24)
         refreshBarangBtn.TabIndex = 2
         ' 
         ' searchTxt
         ' 
         searchTxt.BorderRadius = 10
-        searchTxt.CustomizableEdges = CustomizableEdges19
+        searchTxt.CustomizableEdges = CustomizableEdges37
         searchTxt.DefaultText = ""
         searchTxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         searchTxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -366,7 +408,7 @@ Partial Class Dashboard
         searchTxt.PasswordChar = ChrW(0)
         searchTxt.PlaceholderText = "Search Item"
         searchTxt.SelectedText = ""
-        searchTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        searchTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges38
         searchTxt.Size = New Size(376, 32)
         searchTxt.TabIndex = 1
         ' 
@@ -375,29 +417,29 @@ Partial Class Dashboard
         barangDgv.AllowUserToAddRows = False
         barangDgv.AllowUserToDeleteRows = False
         barangDgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = Color.FromArgb(CByte(189), CByte(223), CByte(251))
-        barangDgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.BackColor = Color.FromArgb(CByte(189), CByte(223), CByte(251))
+        barangDgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         barangDgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
         barangDgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-        DataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
-        DataGridViewCellStyle5.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle5.ForeColor = Color.White
-        DataGridViewCellStyle5.Padding = New Padding(2)
-        DataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(CByte(129), CByte(191), CByte(218))
-        DataGridViewCellStyle5.SelectionForeColor = SystemColors.ControlText
-        DataGridViewCellStyle5.WrapMode = DataGridViewTriState.True
-        barangDgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
+        DataGridViewCellStyle8.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle8.ForeColor = Color.White
+        DataGridViewCellStyle8.Padding = New Padding(2)
+        DataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(CByte(129), CByte(191), CByte(218))
+        DataGridViewCellStyle8.SelectionForeColor = SystemColors.ControlText
+        DataGridViewCellStyle8.WrapMode = DataGridViewTriState.True
+        barangDgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         barangDgv.ColumnHeadersHeight = 30
         barangDgv.Columns.AddRange(New DataGridViewColumn() {no, itemName, category, sellPrice, buyPrice, unit, stock, minStock, barcode, Id})
-        DataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
-        DataGridViewCellStyle6.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle6.ForeColor = Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
-        DataGridViewCellStyle6.SelectionForeColor = Color.Black
-        DataGridViewCellStyle6.WrapMode = DataGridViewTriState.False
-        barangDgv.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
+        DataGridViewCellStyle9.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle9.ForeColor = Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
+        DataGridViewCellStyle9.SelectionForeColor = Color.Black
+        DataGridViewCellStyle9.WrapMode = DataGridViewTriState.False
+        barangDgv.DefaultCellStyle = DataGridViewCellStyle9
         barangDgv.GridColor = Color.FromArgb(CByte(187), CByte(222), CByte(251))
         barangDgv.Location = New Point(24, 40)
         barangDgv.Name = "barangDgv"
@@ -415,14 +457,14 @@ Partial Class Dashboard
         barangDgv.ThemeStyle.GridColor = Color.FromArgb(CByte(187), CByte(222), CByte(251))
         barangDgv.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
         barangDgv.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single
-        barangDgv.ThemeStyle.HeaderStyle.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        barangDgv.ThemeStyle.HeaderStyle.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         barangDgv.ThemeStyle.HeaderStyle.ForeColor = Color.White
         barangDgv.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         barangDgv.ThemeStyle.HeaderStyle.Height = 30
         barangDgv.ThemeStyle.ReadOnly = True
         barangDgv.ThemeStyle.RowsStyle.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
         barangDgv.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
-        barangDgv.ThemeStyle.RowsStyle.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        barangDgv.ThemeStyle.RowsStyle.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         barangDgv.ThemeStyle.RowsStyle.ForeColor = Color.Black
         barangDgv.ThemeStyle.RowsStyle.Height = 25
         barangDgv.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
@@ -521,18 +563,18 @@ Partial Class Dashboard
         ' logRefreshBtn
         ' 
         logRefreshBtn.BackColor = Color.Transparent
-        logRefreshBtn.CustomizableEdges = CustomizableEdges41
+        logRefreshBtn.CustomizableEdges = CustomizableEdges59
         logRefreshBtn.DisabledState.BorderColor = Color.DarkGray
         logRefreshBtn.DisabledState.CustomBorderColor = Color.DarkGray
         logRefreshBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         logRefreshBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         logRefreshBtn.FillColor = Color.Transparent
-        logRefreshBtn.Font = New Font("Segoe UI", 9.0F)
+        logRefreshBtn.Font = New Font("Segoe UI", 9F)
         logRefreshBtn.ForeColor = Color.WhiteSmoke
         logRefreshBtn.Image = My.Resources.Resources.reload
         logRefreshBtn.Location = New Point(888, 8)
         logRefreshBtn.Name = "logRefreshBtn"
-        logRefreshBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges42
+        logRefreshBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges60
         logRefreshBtn.Size = New Size(24, 24)
         logRefreshBtn.TabIndex = 3
         ' 
@@ -541,29 +583,29 @@ Partial Class Dashboard
         logDgv.AllowUserToAddRows = False
         logDgv.AllowUserToDeleteRows = False
         logDgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = Color.FromArgb(CByte(189), CByte(223), CByte(251))
-        logDgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle10.BackColor = Color.FromArgb(CByte(189), CByte(223), CByte(251))
+        logDgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
         logDgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
         logDgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-        DataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
-        DataGridViewCellStyle8.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle8.ForeColor = Color.White
-        DataGridViewCellStyle8.Padding = New Padding(2)
-        DataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(CByte(129), CByte(191), CByte(218))
-        DataGridViewCellStyle8.SelectionForeColor = SystemColors.ControlText
-        DataGridViewCellStyle8.WrapMode = DataGridViewTriState.True
-        logDgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
+        DataGridViewCellStyle11.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle11.ForeColor = Color.White
+        DataGridViewCellStyle11.Padding = New Padding(2)
+        DataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(CByte(129), CByte(191), CByte(218))
+        DataGridViewCellStyle11.SelectionForeColor = SystemColors.ControlText
+        DataGridViewCellStyle11.WrapMode = DataGridViewTriState.True
+        logDgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         logDgv.ColumnHeadersHeight = 30
         logDgv.Columns.AddRange(New DataGridViewColumn() {logNo, logExec, logActions, logTime, logId})
-        DataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
-        DataGridViewCellStyle9.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle9.ForeColor = Color.Black
-        DataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
-        DataGridViewCellStyle9.SelectionForeColor = Color.Black
-        DataGridViewCellStyle9.WrapMode = DataGridViewTriState.False
-        logDgv.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
+        DataGridViewCellStyle12.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle12.ForeColor = Color.Black
+        DataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
+        DataGridViewCellStyle12.SelectionForeColor = Color.Black
+        DataGridViewCellStyle12.WrapMode = DataGridViewTriState.False
+        logDgv.DefaultCellStyle = DataGridViewCellStyle12
         logDgv.GridColor = Color.FromArgb(CByte(187), CByte(222), CByte(251))
         logDgv.Location = New Point(24, 32)
         logDgv.Name = "logDgv"
@@ -581,14 +623,14 @@ Partial Class Dashboard
         logDgv.ThemeStyle.GridColor = Color.FromArgb(CByte(187), CByte(222), CByte(251))
         logDgv.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
         logDgv.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single
-        logDgv.ThemeStyle.HeaderStyle.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        logDgv.ThemeStyle.HeaderStyle.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         logDgv.ThemeStyle.HeaderStyle.ForeColor = Color.White
         logDgv.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         logDgv.ThemeStyle.HeaderStyle.Height = 30
         logDgv.ThemeStyle.ReadOnly = True
         logDgv.ThemeStyle.RowsStyle.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
         logDgv.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
-        logDgv.ThemeStyle.RowsStyle.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        logDgv.ThemeStyle.RowsStyle.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         logDgv.ThemeStyle.RowsStyle.ForeColor = Color.Black
         logDgv.ThemeStyle.RowsStyle.Height = 25
         logDgv.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
@@ -637,7 +679,7 @@ Partial Class Dashboard
         ' Guna2Panel2
         ' 
         Guna2Panel2.BackColor = Color.FromArgb(CByte(233), CByte(233), CByte(232))
-        Guna2Panel2.Controls.Add(Guna2Button1)
+        Guna2Panel2.Controls.Add(btnCashMethod)
         Guna2Panel2.Controls.Add(Logout)
         Guna2Panel2.Controls.Add(Guna2Panel1)
         Guna2Panel2.Controls.Add(itemsBtn)
@@ -646,42 +688,42 @@ Partial Class Dashboard
         Guna2Panel2.Controls.Add(userBtn)
         Guna2Panel2.CustomBorderColor = Color.Gray
         Guna2Panel2.CustomBorderThickness = New Padding(0, 0, 1, 0)
-        Guna2Panel2.CustomizableEdges = CustomizableEdges36
+        Guna2Panel2.CustomizableEdges = CustomizableEdges54
         Guna2Panel2.Location = New Point(0, 0)
         Guna2Panel2.Name = "Guna2Panel2"
-        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges37
+        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges55
         Guna2Panel2.Size = New Size(176, 664)
         Guna2Panel2.TabIndex = 7
         ' 
-        ' Guna2Button1
+        ' btnCashMethod
         ' 
-        Guna2Button1.BorderColor = Color.Silver
-        Guna2Button1.BorderRadius = 10
-        Guna2Button1.BorderThickness = 1
-        CustomizableEdges21.BottomRight = False
-        CustomizableEdges21.TopRight = False
-        Guna2Button1.CustomizableEdges = CustomizableEdges21
-        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button1.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
-        Guna2Button1.Font = New Font("Segoe UI", 9.0F)
-        Guna2Button1.ForeColor = Color.White
-        Guna2Button1.Image = My.Resources.Resources.asd1
-        Guna2Button1.ImageSize = New Size(24, 24)
-        Guna2Button1.Location = New Point(144, 616)
-        Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges22
-        Guna2Button1.Size = New Size(32, 37)
-        Guna2Button1.TabIndex = 8
+        btnCashMethod.BorderColor = Color.Silver
+        btnCashMethod.BorderRadius = 10
+        btnCashMethod.BorderThickness = 1
+        CustomizableEdges39.BottomRight = False
+        CustomizableEdges39.TopRight = False
+        btnCashMethod.CustomizableEdges = CustomizableEdges39
+        btnCashMethod.DisabledState.BorderColor = Color.DarkGray
+        btnCashMethod.DisabledState.CustomBorderColor = Color.DarkGray
+        btnCashMethod.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        btnCashMethod.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        btnCashMethod.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
+        btnCashMethod.Font = New Font("Segoe UI", 9F)
+        btnCashMethod.ForeColor = Color.White
+        btnCashMethod.Image = My.Resources.Resources.asd1
+        btnCashMethod.ImageSize = New Size(24, 24)
+        btnCashMethod.Location = New Point(144, 616)
+        btnCashMethod.Name = "btnCashMethod"
+        btnCashMethod.ShadowDecoration.CustomizableEdges = CustomizableEdges40
+        btnCashMethod.Size = New Size(32, 37)
+        btnCashMethod.TabIndex = 8
         ' 
         ' Logout
         ' 
         Logout.BorderColor = Color.Gray
         Logout.CustomBorderColor = Color.Gray
         Logout.CustomBorderThickness = New Padding(0, 0, 1, 0)
-        Logout.CustomizableEdges = CustomizableEdges23
+        Logout.CustomizableEdges = CustomizableEdges41
         Logout.DisabledState.BorderColor = Color.DarkGray
         Logout.DisabledState.CustomBorderColor = Color.DarkGray
         Logout.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -697,7 +739,7 @@ Partial Class Dashboard
         Logout.Margin = New Padding(0)
         Logout.Name = "Logout"
         Logout.Padding = New Padding(10, 0, 0, 0)
-        Logout.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        Logout.ShadowDecoration.CustomizableEdges = CustomizableEdges42
         Logout.Size = New Size(176, 56)
         Logout.TabIndex = 8
         Logout.Text = "Logout"
@@ -708,7 +750,7 @@ Partial Class Dashboard
         itemsBtn.BorderColor = Color.Gray
         itemsBtn.CustomBorderColor = Color.Gray
         itemsBtn.CustomBorderThickness = New Padding(0, 0, 1, 0)
-        itemsBtn.CustomizableEdges = CustomizableEdges28
+        itemsBtn.CustomizableEdges = CustomizableEdges46
         itemsBtn.DisabledState.BorderColor = Color.DarkGray
         itemsBtn.DisabledState.CustomBorderColor = Color.DarkGray
         itemsBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -724,7 +766,7 @@ Partial Class Dashboard
         itemsBtn.Margin = New Padding(0)
         itemsBtn.Name = "itemsBtn"
         itemsBtn.Padding = New Padding(10, 0, 0, 0)
-        itemsBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges29
+        itemsBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges47
         itemsBtn.Size = New Size(176, 56)
         itemsBtn.TabIndex = 8
         itemsBtn.Text = "Items"
@@ -735,7 +777,7 @@ Partial Class Dashboard
         logBtn.BorderColor = Color.Gray
         logBtn.CustomBorderColor = Color.Gray
         logBtn.CustomBorderThickness = New Padding(0, 0, 1, 0)
-        logBtn.CustomizableEdges = CustomizableEdges30
+        logBtn.CustomizableEdges = CustomizableEdges48
         logBtn.DisabledState.BorderColor = Color.DarkGray
         logBtn.DisabledState.CustomBorderColor = Color.DarkGray
         logBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -751,7 +793,7 @@ Partial Class Dashboard
         logBtn.Margin = New Padding(0)
         logBtn.Name = "logBtn"
         logBtn.Padding = New Padding(10, 0, 0, 0)
-        logBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges31
+        logBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges49
         logBtn.Size = New Size(176, 56)
         logBtn.TabIndex = 8
         logBtn.Text = "Log"
@@ -762,7 +804,7 @@ Partial Class Dashboard
         dashBtn.BorderColor = Color.Gray
         dashBtn.CustomBorderColor = Color.Gray
         dashBtn.CustomBorderThickness = New Padding(0, 0, 1, 0)
-        dashBtn.CustomizableEdges = CustomizableEdges32
+        dashBtn.CustomizableEdges = CustomizableEdges50
         dashBtn.DisabledState.BorderColor = Color.DarkGray
         dashBtn.DisabledState.CustomBorderColor = Color.DarkGray
         dashBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -778,7 +820,7 @@ Partial Class Dashboard
         dashBtn.Margin = New Padding(0)
         dashBtn.Name = "dashBtn"
         dashBtn.Padding = New Padding(10, 0, 0, 0)
-        dashBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges33
+        dashBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges51
         dashBtn.Size = New Size(176, 56)
         dashBtn.TabIndex = 8
         dashBtn.Text = "Dashboard"
@@ -789,7 +831,7 @@ Partial Class Dashboard
         userBtn.BorderColor = Color.Gray
         userBtn.CustomBorderColor = Color.Gray
         userBtn.CustomBorderThickness = New Padding(0, 0, 1, 0)
-        userBtn.CustomizableEdges = CustomizableEdges34
+        userBtn.CustomizableEdges = CustomizableEdges52
         userBtn.DisabledState.BorderColor = Color.DarkGray
         userBtn.DisabledState.CustomBorderColor = Color.DarkGray
         userBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -805,7 +847,7 @@ Partial Class Dashboard
         userBtn.Margin = New Padding(0)
         userBtn.Name = "userBtn"
         userBtn.Padding = New Padding(10, 0, 0, 0)
-        userBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges35
+        userBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges53
         userBtn.Size = New Size(176, 56)
         userBtn.TabIndex = 8
         userBtn.Text = "User Settings"
@@ -827,18 +869,18 @@ Partial Class Dashboard
         ' userDeleteBtn
         ' 
         userDeleteBtn.BorderRadius = 15
-        userDeleteBtn.CustomizableEdges = CustomizableEdges1
+        userDeleteBtn.CustomizableEdges = CustomizableEdges19
         userDeleteBtn.DisabledState.BorderColor = Color.DarkGray
         userDeleteBtn.DisabledState.CustomBorderColor = Color.DarkGray
         userDeleteBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         userDeleteBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         userDeleteBtn.Enabled = False
         userDeleteBtn.FillColor = Color.Gray
-        userDeleteBtn.Font = New Font("Poppins", 9.0F)
+        userDeleteBtn.Font = New Font("Poppins", 9F)
         userDeleteBtn.ForeColor = Color.White
         userDeleteBtn.Location = New Point(384, 0)
         userDeleteBtn.Name = "userDeleteBtn"
-        userDeleteBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        userDeleteBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges20
         userDeleteBtn.Size = New Size(112, 32)
         userDeleteBtn.TabIndex = 5
         userDeleteBtn.Text = "Delete"
@@ -846,18 +888,18 @@ Partial Class Dashboard
         ' changePwBtn
         ' 
         changePwBtn.BorderRadius = 15
-        changePwBtn.CustomizableEdges = CustomizableEdges3
+        changePwBtn.CustomizableEdges = CustomizableEdges21
         changePwBtn.DisabledState.BorderColor = Color.DarkGray
         changePwBtn.DisabledState.CustomBorderColor = Color.DarkGray
         changePwBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         changePwBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         changePwBtn.Enabled = False
         changePwBtn.FillColor = Color.Gray
-        changePwBtn.Font = New Font("Poppins", 9.0F)
+        changePwBtn.Font = New Font("Poppins", 9F)
         changePwBtn.ForeColor = Color.White
         changePwBtn.Location = New Point(264, 0)
         changePwBtn.Name = "changePwBtn"
-        changePwBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        changePwBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges22
         changePwBtn.Size = New Size(112, 32)
         changePwBtn.TabIndex = 5
         changePwBtn.Text = "Change Pw"
@@ -865,17 +907,17 @@ Partial Class Dashboard
         ' userEditBtn
         ' 
         userEditBtn.BorderRadius = 15
-        userEditBtn.CustomizableEdges = CustomizableEdges5
+        userEditBtn.CustomizableEdges = CustomizableEdges23
         userEditBtn.DisabledState.BorderColor = Color.DarkGray
         userEditBtn.DisabledState.CustomBorderColor = Color.DarkGray
         userEditBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         userEditBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         userEditBtn.FillColor = Color.Gray
-        userEditBtn.Font = New Font("Poppins", 9.0F)
+        userEditBtn.Font = New Font("Poppins", 9F)
         userEditBtn.ForeColor = Color.White
         userEditBtn.Location = New Point(144, 0)
         userEditBtn.Name = "userEditBtn"
-        userEditBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        userEditBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         userEditBtn.Size = New Size(112, 32)
         userEditBtn.TabIndex = 5
         userEditBtn.Text = "Edit Mode"
@@ -883,17 +925,17 @@ Partial Class Dashboard
         ' addUserBtn
         ' 
         addUserBtn.BorderRadius = 15
-        addUserBtn.CustomizableEdges = CustomizableEdges7
+        addUserBtn.CustomizableEdges = CustomizableEdges25
         addUserBtn.DisabledState.BorderColor = Color.DarkGray
         addUserBtn.DisabledState.CustomBorderColor = Color.DarkGray
         addUserBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         addUserBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         addUserBtn.FillColor = Color.Gray
-        addUserBtn.Font = New Font("Poppins", 9.0F)
+        addUserBtn.Font = New Font("Poppins", 9F)
         addUserBtn.ForeColor = Color.White
         addUserBtn.Location = New Point(24, 0)
         addUserBtn.Name = "addUserBtn"
-        addUserBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        addUserBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         addUserBtn.Size = New Size(112, 32)
         addUserBtn.TabIndex = 5
         addUserBtn.Text = "Add User"
@@ -901,18 +943,18 @@ Partial Class Dashboard
         ' userRefreshBtn
         ' 
         userRefreshBtn.BackColor = Color.Transparent
-        userRefreshBtn.CustomizableEdges = CustomizableEdges9
+        userRefreshBtn.CustomizableEdges = CustomizableEdges27
         userRefreshBtn.DisabledState.BorderColor = Color.DarkGray
         userRefreshBtn.DisabledState.CustomBorderColor = Color.DarkGray
         userRefreshBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         userRefreshBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         userRefreshBtn.FillColor = Color.Transparent
-        userRefreshBtn.Font = New Font("Segoe UI", 9.0F)
+        userRefreshBtn.Font = New Font("Segoe UI", 9F)
         userRefreshBtn.ForeColor = Color.WhiteSmoke
         userRefreshBtn.Image = My.Resources.Resources.reload
         userRefreshBtn.Location = New Point(744, 8)
         userRefreshBtn.Name = "userRefreshBtn"
-        userRefreshBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        userRefreshBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges28
         userRefreshBtn.Size = New Size(24, 24)
         userRefreshBtn.TabIndex = 4
         ' 
@@ -921,29 +963,29 @@ Partial Class Dashboard
         userDgv.AllowUserToAddRows = False
         userDgv.AllowUserToDeleteRows = False
         userDgv.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(189), CByte(223), CByte(251))
-        userDgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = Color.FromArgb(CByte(189), CByte(223), CByte(251))
+        userDgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         userDgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
         userDgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
-        DataGridViewCellStyle2.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle2.ForeColor = Color.White
-        DataGridViewCellStyle2.Padding = New Padding(2)
-        DataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(CByte(129), CByte(191), CByte(218))
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
-        userDgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
+        DataGridViewCellStyle5.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle5.ForeColor = Color.White
+        DataGridViewCellStyle5.Padding = New Padding(2)
+        DataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(CByte(129), CByte(191), CByte(218))
+        DataGridViewCellStyle5.SelectionForeColor = SystemColors.ControlText
+        DataGridViewCellStyle5.WrapMode = DataGridViewTriState.True
+        userDgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         userDgv.ColumnHeadersHeight = 30
         userDgv.Columns.AddRange(New DataGridViewColumn() {userNo, userName, userRole, userCreated, userId})
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
-        DataGridViewCellStyle3.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle3.ForeColor = Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
-        DataGridViewCellStyle3.SelectionForeColor = Color.Black
-        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
-        userDgv.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
+        DataGridViewCellStyle6.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle6.ForeColor = Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
+        DataGridViewCellStyle6.SelectionForeColor = Color.Black
+        DataGridViewCellStyle6.WrapMode = DataGridViewTriState.False
+        userDgv.DefaultCellStyle = DataGridViewCellStyle6
         userDgv.GridColor = Color.FromArgb(CByte(187), CByte(222), CByte(251))
         userDgv.Location = New Point(24, 40)
         userDgv.MultiSelect = False
@@ -962,14 +1004,14 @@ Partial Class Dashboard
         userDgv.ThemeStyle.GridColor = Color.FromArgb(CByte(187), CByte(222), CByte(251))
         userDgv.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
         userDgv.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single
-        userDgv.ThemeStyle.HeaderStyle.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        userDgv.ThemeStyle.HeaderStyle.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         userDgv.ThemeStyle.HeaderStyle.ForeColor = Color.White
         userDgv.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         userDgv.ThemeStyle.HeaderStyle.Height = 30
         userDgv.ThemeStyle.ReadOnly = True
         userDgv.ThemeStyle.RowsStyle.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
         userDgv.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
-        userDgv.ThemeStyle.RowsStyle.Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        userDgv.ThemeStyle.RowsStyle.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         userDgv.ThemeStyle.RowsStyle.ForeColor = Color.Black
         userDgv.ThemeStyle.RowsStyle.Height = 25
         userDgv.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
@@ -1012,18 +1054,301 @@ Partial Class Dashboard
         userId.ReadOnly = True
         userId.Width = 50
         ' 
+        ' dashPnl
+        ' 
+        dashPnl.Controls.Add(DashDgv)
+        dashPnl.Controls.Add(paymentPnl)
+        dashPnl.Controls.Add(dashSidePnl)
+        dashPnl.Controls.Add(txtBarcode)
+        dashPnl.Location = New Point(176, 32)
+        dashPnl.Name = "dashPnl"
+        dashPnl.Size = New Size(976, 632)
+        dashPnl.TabIndex = 10
+        dashPnl.Visible = False
+        ' 
+        ' DashDgv
+        ' 
+        DashDgv.AllowUserToAddRows = False
+        DashDgv.AllowUserToDeleteRows = False
+        DashDgv.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = Color.FromArgb(CByte(189), CByte(223), CByte(251))
+        DashDgv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DashDgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+        DashDgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
+        DataGridViewCellStyle2.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle2.ForeColor = Color.White
+        DataGridViewCellStyle2.Padding = New Padding(2)
+        DataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(CByte(129), CByte(191), CByte(218))
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
+        DashDgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DashDgv.ColumnHeadersHeight = 30
+        DashDgv.Columns.AddRange(New DataGridViewColumn() {dashColNo, dashColName, dashColPrice, dashColQty})
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
+        DataGridViewCellStyle3.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle3.ForeColor = Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
+        DataGridViewCellStyle3.SelectionForeColor = Color.Black
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
+        DashDgv.DefaultCellStyle = DataGridViewCellStyle3
+        DashDgv.GridColor = Color.FromArgb(CByte(187), CByte(222), CByte(251))
+        DashDgv.Location = New Point(16, 88)
+        DashDgv.MultiSelect = False
+        DashDgv.Name = "DashDgv"
+        DashDgv.ReadOnly = True
+        DashDgv.RowHeadersVisible = False
+        DashDgv.Size = New Size(584, 512)
+        DashDgv.TabIndex = 3
+        DashDgv.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue
+        DashDgv.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(CByte(189), CByte(223), CByte(251))
+        DashDgv.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        DashDgv.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty
+        DashDgv.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty
+        DashDgv.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty
+        DashDgv.ThemeStyle.BackColor = Color.White
+        DashDgv.ThemeStyle.GridColor = Color.FromArgb(CByte(187), CByte(222), CByte(251))
+        DashDgv.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(CByte(33), CByte(150), CByte(242))
+        DashDgv.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.Single
+        DashDgv.ThemeStyle.HeaderStyle.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DashDgv.ThemeStyle.HeaderStyle.ForeColor = Color.White
+        DashDgv.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DashDgv.ThemeStyle.HeaderStyle.Height = 30
+        DashDgv.ThemeStyle.ReadOnly = True
+        DashDgv.ThemeStyle.RowsStyle.BackColor = Color.FromArgb(CByte(211), CByte(233), CByte(252))
+        DashDgv.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        DashDgv.ThemeStyle.RowsStyle.Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DashDgv.ThemeStyle.RowsStyle.ForeColor = Color.Black
+        DashDgv.ThemeStyle.RowsStyle.Height = 25
+        DashDgv.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(CByte(107), CByte(185), CByte(246))
+        DashDgv.ThemeStyle.RowsStyle.SelectionForeColor = Color.Black
+        ' 
+        ' dashColNo
+        ' 
+        dashColNo.FillWeight = 38.6795425F
+        dashColNo.HeaderText = "No"
+        dashColNo.Name = "dashColNo"
+        dashColNo.ReadOnly = True
+        dashColNo.Resizable = DataGridViewTriState.False
+        dashColNo.Width = 33
+        ' 
+        ' dashColName
+        ' 
+        dashColName.HeaderText = "Name"
+        dashColName.Name = "dashColName"
+        dashColName.ReadOnly = True
+        dashColName.Width = 320
+        ' 
+        ' dashColPrice
+        ' 
+        dashColPrice.HeaderText = "Price / 1"
+        dashColPrice.Name = "dashColPrice"
+        dashColPrice.ReadOnly = True
+        dashColPrice.Width = 180
+        ' 
+        ' dashColQty
+        ' 
+        dashColQty.HeaderText = "Qty"
+        dashColQty.Name = "dashColQty"
+        dashColQty.ReadOnly = True
+        dashColQty.Width = 45
+        ' 
+        ' paymentPnl
+        ' 
+        paymentPnl.BackColor = Color.White
+        paymentPnl.Controls.Add(btnCancelPay)
+        paymentPnl.Controls.Add(btnQrisMethod)
+        paymentPnl.Controls.Add(btnCash)
+        paymentPnl.CustomizableEdges = CustomizableEdges7
+        paymentPnl.Location = New Point(616, 208)
+        paymentPnl.Name = "paymentPnl"
+        paymentPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        paymentPnl.Size = New Size(336, 168)
+        paymentPnl.TabIndex = 1
+        paymentPnl.Visible = False
+        ' 
+        ' btnCancelPay
+        ' 
+        btnCancelPay.BorderRadius = 3
+        btnCancelPay.CustomizableEdges = CustomizableEdges1
+        btnCancelPay.DisabledState.BorderColor = Color.DarkGray
+        btnCancelPay.DisabledState.CustomBorderColor = Color.DarkGray
+        btnCancelPay.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        btnCancelPay.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        btnCancelPay.FillColor = Color.FromArgb(CByte(231), CByte(76), CByte(60))
+        btnCancelPay.Font = New Font("Poppins", 13F)
+        btnCancelPay.ForeColor = Color.White
+        btnCancelPay.Location = New Point(176, 112)
+        btnCancelPay.Name = "btnCancelPay"
+        btnCancelPay.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        btnCancelPay.Size = New Size(144, 40)
+        btnCancelPay.TabIndex = 6
+        btnCancelPay.Text = "Cancel"
+        ' 
+        ' btnQrisMethod
+        ' 
+        btnQrisMethod.BorderRadius = 3
+        btnQrisMethod.CustomizableEdges = CustomizableEdges3
+        btnQrisMethod.DisabledState.BorderColor = Color.DarkGray
+        btnQrisMethod.DisabledState.CustomBorderColor = Color.DarkGray
+        btnQrisMethod.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        btnQrisMethod.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        btnQrisMethod.FillColor = Color.FromArgb(CByte(155), CByte(89), CByte(182))
+        btnQrisMethod.Font = New Font("Poppins", 20F)
+        btnQrisMethod.ForeColor = Color.White
+        btnQrisMethod.Location = New Point(176, 16)
+        btnQrisMethod.Name = "btnQrisMethod"
+        btnQrisMethod.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        btnQrisMethod.Size = New Size(144, 88)
+        btnQrisMethod.TabIndex = 6
+        btnQrisMethod.Text = "Qris"
+        ' 
+        ' btnCash
+        ' 
+        btnCash.BorderRadius = 3
+        btnCash.CustomizableEdges = CustomizableEdges5
+        btnCash.DisabledState.BorderColor = Color.DarkGray
+        btnCash.DisabledState.CustomBorderColor = Color.DarkGray
+        btnCash.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        btnCash.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        btnCash.FillColor = Color.FromArgb(CByte(52), CByte(152), CByte(219))
+        btnCash.Font = New Font("Poppins", 20F)
+        btnCash.ForeColor = Color.White
+        btnCash.Location = New Point(16, 16)
+        btnCash.Name = "btnCash"
+        btnCash.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        btnCash.Size = New Size(152, 136)
+        btnCash.TabIndex = 6
+        btnCash.Text = "Cash"
+        ' 
+        ' dashSidePnl
+        ' 
+        dashSidePnl.BackColor = Color.White
+        dashSidePnl.Controls.Add(btnPay)
+        dashSidePnl.Controls.Add(btnSetQty)
+        dashSidePnl.Controls.Add(btnDel)
+        dashSidePnl.Controls.Add(lblTotal)
+        dashSidePnl.Controls.Add(Label1)
+        dashSidePnl.CustomizableEdges = CustomizableEdges15
+        dashSidePnl.Location = New Point(616, 24)
+        dashSidePnl.Name = "dashSidePnl"
+        dashSidePnl.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        dashSidePnl.Size = New Size(336, 168)
+        dashSidePnl.TabIndex = 1
+        ' 
+        ' btnPay
+        ' 
+        btnPay.BorderRadius = 15
+        btnPay.CustomizableEdges = CustomizableEdges9
+        btnPay.DisabledState.BorderColor = Color.DarkGray
+        btnPay.DisabledState.CustomBorderColor = Color.DarkGray
+        btnPay.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        btnPay.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        btnPay.Enabled = False
+        btnPay.FillColor = Color.FromArgb(CByte(157), CByte(192), CByte(139))
+        btnPay.Font = New Font("Poppins", 9F)
+        btnPay.ForeColor = Color.White
+        btnPay.Location = New Point(184, 120)
+        btnPay.Name = "btnPay"
+        btnPay.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        btnPay.Size = New Size(136, 32)
+        btnPay.TabIndex = 6
+        btnPay.Text = "Close Bill"
+        ' 
+        ' btnSetQty
+        ' 
+        btnSetQty.BorderRadius = 15
+        btnSetQty.CustomizableEdges = CustomizableEdges11
+        btnSetQty.DisabledState.BorderColor = Color.DarkGray
+        btnSetQty.DisabledState.CustomBorderColor = Color.DarkGray
+        btnSetQty.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        btnSetQty.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        btnSetQty.Enabled = False
+        btnSetQty.FillColor = Color.Gray
+        btnSetQty.Font = New Font("Poppins", 9F)
+        btnSetQty.ForeColor = Color.White
+        btnSetQty.Location = New Point(96, 120)
+        btnSetQty.Name = "btnSetQty"
+        btnSetQty.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        btnSetQty.Size = New Size(80, 32)
+        btnSetQty.TabIndex = 6
+        btnSetQty.Text = "Set Qty"
+        ' 
+        ' btnDel
+        ' 
+        btnDel.BorderRadius = 15
+        btnDel.CustomizableEdges = CustomizableEdges13
+        btnDel.DisabledState.BorderColor = Color.DarkGray
+        btnDel.DisabledState.CustomBorderColor = Color.DarkGray
+        btnDel.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        btnDel.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        btnDel.Enabled = False
+        btnDel.FillColor = Color.Gray
+        btnDel.Font = New Font("Poppins", 9F)
+        btnDel.ForeColor = Color.White
+        btnDel.Location = New Point(16, 120)
+        btnDel.Name = "btnDel"
+        btnDel.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        btnDel.Size = New Size(72, 32)
+        btnDel.TabIndex = 6
+        btnDel.Text = "Delete"
+        ' 
+        ' lblTotal
+        ' 
+        lblTotal.AutoSize = True
+        lblTotal.Font = New Font("Poppins Medium", 21.75F, FontStyle.Bold)
+        lblTotal.Location = New Point(16, 48)
+        lblTotal.Name = "lblTotal"
+        lblTotal.Size = New Size(285, 51)
+        lblTotal.TabIndex = 0
+        lblTotal.Text = "Rp 99.999.999.99"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(16, 16)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(52, 28)
+        Label1.TabIndex = 0
+        Label1.Text = "Total"
+        ' 
+        ' txtBarcode
+        ' 
+        txtBarcode.CustomizableEdges = CustomizableEdges17
+        txtBarcode.DefaultText = ""
+        txtBarcode.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
+        txtBarcode.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
+        txtBarcode.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        txtBarcode.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        txtBarcode.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        txtBarcode.Font = New Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtBarcode.ForeColor = Color.Black
+        txtBarcode.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        txtBarcode.Location = New Point(16, 24)
+        txtBarcode.Margin = New Padding(0)
+        txtBarcode.Name = "txtBarcode"
+        txtBarcode.PasswordChar = ChrW(0)
+        txtBarcode.PlaceholderText = "Barcode"
+        txtBarcode.SelectedText = ""
+        txtBarcode.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        txtBarcode.Size = New Size(584, 48)
+        txtBarcode.TabIndex = 0
+        ' 
         ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(10.0F, 28.0F)
+        AutoScaleDimensions = New SizeF(10F, 28F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
         ClientSize = New Size(1153, 660)
+        Controls.Add(dashPnl)
         Controls.Add(userPnl)
         Controls.Add(itemsPnl)
         Controls.Add(Guna2Panel2)
         Controls.Add(Panel1)
         Controls.Add(logPnlx)
-        Font = New Font("Poppins", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Font = New Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4, 6, 4, 6)
         Name = "Dashboard"
@@ -1040,6 +1365,11 @@ Partial Class Dashboard
         Guna2Panel2.ResumeLayout(False)
         userPnl.ResumeLayout(False)
         CType(userDgv, ComponentModel.ISupportInitialize).EndInit()
+        dashPnl.ResumeLayout(False)
+        CType(DashDgv, ComponentModel.ISupportInitialize).EndInit()
+        paymentPnl.ResumeLayout(False)
+        dashSidePnl.ResumeLayout(False)
+        dashSidePnl.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
@@ -1056,7 +1386,7 @@ Partial Class Dashboard
     Friend WithEvents logBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents userBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Logout As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCashMethod As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents itemsBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents itemsPnl As Panel
     Friend WithEvents barangDgv As Guna.UI2.WinForms.Guna2DataGridView
@@ -1096,4 +1426,21 @@ Partial Class Dashboard
     Friend WithEvents userCreated As DataGridViewTextBoxColumn
     Friend WithEvents userId As DataGridViewTextBoxColumn
     Friend WithEvents changePwBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents dashPnl As Panel
+    Friend WithEvents dashSidePnl As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents txtBarcode As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents DashDgv As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents dashColNo As DataGridViewTextBoxColumn
+    Friend WithEvents dashColName As DataGridViewTextBoxColumn
+    Friend WithEvents dashColPrice As DataGridViewTextBoxColumn
+    Friend WithEvents dashColQty As DataGridViewTextBoxColumn
+    Friend WithEvents btnSetQty As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnDel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents lblTotal As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnPay As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents paymentPnl As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents btnCash As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnQrisMethod As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCancelPay As Guna.UI2.WinForms.Guna2Button
 End Class
