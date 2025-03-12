@@ -4,6 +4,7 @@ Imports Microsoft.EntityFrameworkCore.ValueGeneration.Internal
 Imports MySql.Data.MySqlClient
 Imports Org.BouncyCastle.Crypto.Generators
 Imports System.Media
+Imports Microsoft.Data.SqlClient
 
 
 Public Class Dashboard
@@ -323,6 +324,7 @@ Public Class Dashboard
     End Sub
     Private Sub logRefreshBtn_Click(sender As Object, e As EventArgs) Handles logRefreshBtn.Click
         loadLog()
+        loadTransLog(False)
     End Sub
 
 
@@ -460,9 +462,10 @@ Public Class Dashboard
             btnPay.Enabled = False
             btnSetQty.Enabled = False
         End If
+
     End Sub
 
-    Private Sub btnSetQty_Click(sender As Object, e As EventArgs) Handles btnSetQty.Click, btnQrisMethod.Click
+    Private Sub btnSetQty_Click(sender As Object, e As EventArgs) Handles btnSetQty.Click
         Dim userInput As String
         Dim qty As Integer
         Dim si = DashDgv.SelectedRows(0).Index
@@ -487,20 +490,83 @@ Public Class Dashboard
         result = MsgBox("Saldo: " & Convert.ToInt64(userInput).ToString("N0") & vbCrLf &
                 "Hutang: " & total.ToString("N0") & vbCrLf &
                 "Kembalian: " & chance.ToString("N0") & vbCrLf & "Apakah Ingin Mencetak Struk?",
-                vbYesNoCancel + vbInformation, "Detail Pembayaran")
+                vbYesNo + vbInformation, "Detail Pembayaran")
 
-        If result = vbYes Then
-            MessageBox.Show("User memilih YES")
-        ElseIf result = vbNo Then
-            MessageBox.Show("User memilih NO")
-        ElseIf result = vbCancel Then
-            MessageBox.Show("User membatalkan transaksi")
-            Return -1 ' Bisa return -1 untuk indikasi batal
+        If result = vbYes Or result = vbNo Then
+            InputTransactionData(total, True)
+            DashDgv.Rows.Clear()
+            reorderNum()
+            sumdgv()
+            paymentPnl.Location = New Point(616, 208)
+            paymentPnl.Visible = False
         End If
 
         Return chance
     End Function
 
+    Function InputTransactionData(ByVal totalam As Decimal, ByVal iscash As Boolean) As Boolean
+        Try
+            ' Generate unique transaction ID
+            Dim id As Integer = GenerateUniqueTransactionID(conn)
+            Dim empname As String = userInfo(1)
+            Dim paymentMethod As String = If(iscash, "cash", "qris")
+
+            ' Insert data into transactions table
+            Dim insertTransactionQuery As String = "INSERT INTO transactions (id, employee_name, total_amount, payment_method) VALUES (@id, @empname, @totalam, @paymentMethod)"
+            Using cmd As New MySqlCommand(insertTransactionQuery, conn)
+                cmd.Parameters.AddWithValue("@id", id)
+                cmd.Parameters.AddWithValue("@empname", empname)
+                cmd.Parameters.AddWithValue("@totalam", totalam)
+                cmd.Parameters.AddWithValue("@paymentMethod", paymentMethod)
+                cmd.ExecuteNonQuery()
+            End Using
+
+            ' Insert items into transaction_items table
+            Dim insertItemQuery As String = "INSERT INTO transaction_items (transaction_id, item_name, item_price, quantity) VALUES (@transaction_id, @item_name, @item_price, @quantity)"
+            Using cmd As New MySqlCommand(insertItemQuery, conn)
+                For Each row As DataGridViewRow In DashDgv.Rows
+                    If Not row.IsNewRow Then
+                        Dim itemName As String = row.Cells(1).Value.ToString() ' Ambil data dari kolom ke-2
+                        Dim itemPrice As Decimal = Convert.ToDecimal(row.Cells(2).Value) ' Ambil harga (misal dari kolom ke-3)
+                        Dim quantity As Integer = Convert.ToInt32(row.Cells(3).Value) ' Ambil jumlah (misal dari kolom ke-4)
+
+                        cmd.Parameters.Clear()
+                        cmd.Parameters.AddWithValue("@transaction_id", id)
+                        cmd.Parameters.AddWithValue("@item_name", itemName)
+                        cmd.Parameters.AddWithValue("@item_price", itemPrice)
+                        cmd.Parameters.AddWithValue("@quantity", quantity)
+                        cmd.ExecuteNonQuery()
+                    End If
+                Next
+            End Using
+
+            addLog(7, id.ToString())
+            Return True ' Jika berhasil
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+            Return False ' Jika gagal
+        End Try
+    End Function
+
+    Function GenerateUniqueTransactionID(ByVal conn As MySqlConnection) As Integer
+        Dim rnd As New Random()
+        Dim uniqueID As Integer
+        Dim isUnique As Boolean = False
+
+        While Not isUnique
+            uniqueID = rnd.Next(100000, 999999)
+            Dim query As String = "SELECT COUNT(*) FROM transactions WHERE id = @id"
+            Using cmd As New MySqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@id", uniqueID)
+                Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+                If count = 0 Then
+                    isUnique = True
+                End If
+            End Using
+        End While
+
+        Return uniqueID
+    End Function
 
     Private Sub btnPay_Click(sender As Object, e As EventArgs) Handles btnPay.Click
         paymentPnl.Location = New Point(616, 24)
@@ -515,5 +581,78 @@ Public Class Dashboard
 
     Private Sub btnCash_Click(sender As Object, e As EventArgs) Handles btnCash.Click
         cashPaymentChance(sumdgv())
+    End Sub
+
+    Function GetTransactionItemCount(ByVal id As Integer) As Integer
+        Dim count As Integer = 0
+        Using newConnx As New MySqlConnection(conn.ConnectionString & ";Password=1232;")
+            Try
+                newConnx.Open()
+                Dim query As String = "SELECT SUM(quantity) FROM transaction_items WHERE transaction_id = @id"
+                Using cmd As New MySqlCommand(query, newConnx)
+                    cmd.Parameters.AddWithValue("@id", id)
+                    Dim result = cmd.ExecuteScalar()
+                    If Not IsDBNull(result) Then
+                        count = Convert.ToInt32(result)
+                    End If
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        End Using
+        Return count
+    End Function
+
+
+    Private Sub transDate_ValueChanged(sender As Object, e As EventArgs) Handles transDate.ValueChanged
+        loadTransLog(True, transDate.Value)
+    End Sub
+
+
+
+    Sub loadTransLog(ByVal useDate As Boolean, Optional ByVal datex As DateTime = Nothing)
+        Dim qry As String
+
+
+        If useDate Then
+            qry = "SELECT * FROM transactions WHERE DATE(transaction_datetime) = @datex"
+        Else
+            qry = "SELECT * FROM transactions"
+        End If
+
+        Dim cmd As New MySqlCommand(qry, conn)
+
+        If useDate Then
+            cmd.Parameters.AddWithValue("@datex", datex.ToString("yyyy-MM-dd")) ' Format ke YYYY-MM-DD
+        End If
+
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
+        Dim no As Integer = 1
+        transLogDgv.Rows.Clear()
+
+        While reader.Read()
+            transLogDgv.Rows.Add(no,
+                             reader("id").ToString(),
+                             reader("employee_name").ToString(),
+                             GetTransactionItemCount(Convert.ToInt32(reader("id"))),
+                             reader("transaction_datetime").ToString(),
+                             reader("payment_method").ToString(),
+                             reader("total_amount").ToString())
+            no += 1
+        End While
+
+        reader.Close()
+    End Sub
+
+    Private Sub logDgvButton_Click(sender As Object, e As EventArgs) Handles logDgvButton.Click
+        logDgv.Visible = True
+        transLogDgv.Visible = False
+        transDate.Visible = False
+    End Sub
+
+    Private Sub transBtn_Click(sender As Object, e As EventArgs) Handles transBtn.Click
+        logDgv.Visible = False
+        transLogDgv.Visible = True
+        transDate.Visible = True
     End Sub
 End Class

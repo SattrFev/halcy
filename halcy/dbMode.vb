@@ -22,12 +22,13 @@ Module dbMode
                 actions = "logout"
             Case 6
                 actions = $"add new user {pholder}"
+            Case 7
+                actions = $"Complete Transactions with id {pholder}"
         End Select
 
         actions = actions.Trim()
 
         Using newConn As New MySqlConnection(conn.ConnectionString & ";Password=1232;")
-
             Try
                 newConn.Open()
                 Dim cmd = New MySqlCommand($"INSERT INTO userlog (executor, actions) VALUES ('{userInfo(2)}', '{actions}')", newConn)
